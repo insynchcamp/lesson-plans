@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>In Synch Summer Camp 2026</title>
+<style>
+:root{
+  --purple:#6D28D9; --purple-dark:#4C1D95; --purple-mid:#7C3AED; --purple-light:#EDE9FE;
+  --silver:#9CA3AF; --silver-light:#F3F4F6; --border:#E5E7EB; --text:#111827; --muted:#6B7280;
+  --routine:#7C3AED; --skill:#2563EB; --figure:#DB2777; --acro:#059669; --warmup:#6B7280;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;-webkit-text-size-adjust:100%}
+button{font-family:inherit}
+.hdr{background:linear-gradient(135deg,var(--purple-dark),var(--purple-mid));color:#fff;padding:14px 16px 10px;text-align:center}
+.hdr h1{font-size:1.25rem;letter-spacing:.5px;text-transform:uppercase}
+.hdr h1 .syn{color:#E9D5FF;font-style:italic}
+.hdr .tag{font-size:.72rem;color:#DDD6FE;letter-spacing:2px;text-transform:uppercase;margin-top:2px}
+.mebar{background:var(--purple-light);border-bottom:1px solid var(--border);padding:8px 12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mebar label{font-size:.85rem;font-weight:600;color:var(--purple-dark)}
+.mebar select{flex:1;min-width:120px}
+select,input[type=text],textarea{border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:.95rem;background:#fff;color:var(--text);font-family:inherit}
+select:focus,input:focus,textarea:focus{outline:2px solid var(--purple-mid);outline-offset:1px}
+.pill-toggle{border:1.5px solid var(--purple-mid);background:#fff;color:var(--purple-mid);border-radius:999px;padding:6px 14px;font-size:.85rem;font-weight:700;cursor:pointer}
+.pill-toggle.on{background:var(--purple-mid);color:#fff}
+.tabs{display:flex;background:#fff;border-bottom:2px solid var(--border);position:sticky;top:0;z-index:20;overflow-x:auto}
+.tabs button{flex:1;min-width:70px;background:none;border:none;padding:12px 6px;font-size:.85rem;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+.tabs button.on{color:var(--purple-dark);border-bottom-color:var(--purple-mid)}
+.wrap{max-width:860px;margin:0 auto;padding:14px 12px 90px}
+.daychips{display:flex;gap:6px;overflow-x:auto;padding:4px 0 10px}
+.daychips button{border:1.5px solid var(--border);background:#fff;border-radius:10px;padding:6px 10px;font-size:.8rem;font-weight:600;color:var(--text);cursor:pointer;white-space:nowrap;text-align:center}
+.daychips button .d{display:block;font-size:.7rem;color:var(--muted);font-weight:500}
+.daychips button.on{background:var(--purple-mid);border-color:var(--purple-mid);color:#fff}
+.daychips button.on .d{color:#DDD6FE}
+.card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.card h3{font-size:1rem;color:var(--purple-dark);margin-bottom:8px}
+.tl-item{display:flex;gap:10px;padding:8px 10px;border-left:4px solid var(--border);border-radius:6px;margin-bottom:6px;background:#fff;border-top:1px solid var(--border);border-right:1px solid var(--border);border-bottom:1px solid var(--border);align-items:center}
+.tl-item .tm{font-size:.78rem;font-weight:700;color:var(--muted);min-width:86px;flex-shrink:0}
+.tl-item .ti{font-size:.92rem;font-weight:600;flex:1}
+.tl-item .ti small{display:block;font-weight:500;color:var(--muted);font-size:.78rem}
+.tl-item.clickable{cursor:pointer}
+.tl-item.clickable:active{background:var(--purple-light)}
+.tl-item .chev{color:var(--purple-mid);font-weight:800}
+.cat-gen{border-left-color:#D1D5DB}
+.cat-meal{border-left-color:#F9A8D4}
+.cat-swim{border-left-color:#22D3EE;background:#ECFEFF}
+.cat-land{border-left-color:#A78BFA;background:#F5F3FF}
+.cat-dance{border-left-color:#F472B6;background:#FDF2F8}
+.cat-yoga{border-left-color:#34D399;background:#ECFDF5}
+.cat-eve{border-left-color:#FBBF24;background:#FFFBEB}
+.cat-rest{border-left-color:#E5E7EB;background:#FAFAFA}
+.wkday{margin-bottom:14px}
+.wkday .wkhead{display:flex;justify-content:space-between;align-items:center;background:var(--purple-light);border-radius:10px 10px 0 0;padding:8px 12px;border:1px solid var(--border);border-bottom:none;cursor:pointer}
+.wkday .wkhead b{color:var(--purple-dark)}
+.wkday .wkhead span{font-size:.78rem;color:var(--muted)}
+.wkbody{border:1px solid var(--border);border-radius:0 0 10px 10px;padding:8px;display:flex;flex-wrap:wrap;gap:6px}
+.sess-chip{border:none;border-radius:8px;padding:7px 10px;font-size:.8rem;font-weight:600;cursor:pointer;color:#fff}
+.sess-chip small{display:block;font-weight:500;font-size:.68rem;opacity:.9}
+.sc-swim{background:#0891B2}.sc-land{background:#7C3AED}.sc-dance{background:#DB2777}.sc-yoga{background:#059669}.sc-eve{background:#D97706}.sc-gen{background:#6B7280}
+.block{border:1px solid var(--border);border-radius:10px;margin-bottom:8px;overflow:hidden}
+.block .bh{background:var(--silver-light);padding:6px 10px;font-size:.8rem;font-weight:700;color:var(--text);display:flex;justify-content:space-between;align-items:center}
+.block .bh .add{border:none;background:var(--purple-mid);color:#fff;border-radius:6px;padding:3px 10px;font-size:.75rem;font-weight:700;cursor:pointer}
+.block.warm .bh{background:#E5E7EB}
+.block.land .bh{background:#ECFDF5}
+.asg{padding:8px 10px;border-top:1px solid var(--border);display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap}
+.asg.mine{background:#F5F3FF}
+.asg .act{color:#fff;border-radius:6px;padding:2px 8px;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;flex-shrink:0;margin-top:2px}
+.asg .body{flex:1;min-width:150px}
+.asg .body .who{font-size:.8rem;font-weight:700;color:var(--purple-dark)}
+.asg .body .sk{font-size:.9rem;margin-top:2px;white-space:pre-wrap}
+.asg .body .nt{font-size:.78rem;color:var(--muted);margin-top:2px}
+.asg .ops{display:flex;gap:6px}
+.asg .ops button{border:1px solid var(--border);background:#fff;border-radius:6px;padding:3px 8px;font-size:.72rem;cursor:pointer;font-weight:600}
+.asg .ops .fb{border-color:var(--purple-mid);color:var(--purple-mid)}
+.empty{padding:8px 10px;border-top:1px solid var(--border);font-size:.8rem;color:var(--silver);font-style:italic}
+.editform{padding:10px;border-top:2px solid var(--purple-light);background:#FAFAFF;display:grid;gap:6px}
+.editform .row{display:flex;gap:6px;flex-wrap:wrap}
+.editform select,.editform input{flex:1;min-width:110px}
+.btn{border:none;background:var(--purple-mid);color:#fff;border-radius:8px;padding:10px 16px;font-size:.9rem;font-weight:700;cursor:pointer}
+.btn.sec{background:#fff;color:var(--purple-mid);border:1.5px solid var(--purple-mid)}
+.btn.sm{padding:6px 12px;font-size:.8rem}
+.btn.danger{background:#fff;color:#DC2626;border:1.5px solid #FCA5A5}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.topbar h2{font-size:1.1rem;color:var(--purple-dark)}
+.topbar .sub{font-size:.8rem;color:var(--muted)}
+.fbform{display:grid;gap:8px}
+.fbform label{font-size:.8rem;font-weight:700;color:var(--purple-dark)}
+.fbform .frow{display:grid;gap:4px}
+.photo-prev{max-width:160px;border-radius:8px;border:1px solid var(--border);display:block}
+.fbcard{border:1px solid var(--border);border-radius:10px;padding:10px;margin-bottom:8px}
+.fbcard .meta{font-size:.75rem;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.fbcard .meta b{color:var(--purple-dark)}
+.fbcard .skills{font-size:.8rem;font-weight:700}
+.fbcard .txt{font-size:.9rem;margin-top:3px;white-space:pre-wrap}
+.fbcard img{max-width:140px;border-radius:8px;margin-top:6px;border:1px solid var(--border)}
+.athchips{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.athchips button{border:1px solid var(--border);background:#fff;border-radius:999px;padding:5px 12px;font-size:.8rem;cursor:pointer;font-weight:600}
+.athchips button.on{background:var(--purple-mid);color:#fff;border-color:var(--purple-mid)}
+.report{border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:14px;background:#fff}
+.report h2{color:var(--purple-dark);font-size:1.2rem;border-bottom:3px solid var(--purple-mid);padding-bottom:6px;margin-bottom:4px}
+.report .rgroup{font-size:.85rem;color:var(--muted);margin-bottom:10px;font-weight:600}
+.rentry{border-left:3px solid var(--purple-light);padding:6px 0 6px 12px;margin-bottom:10px}
+.rentry .rmeta{font-size:.78rem;color:var(--muted)}
+.rentry .rmeta b{color:var(--text)}
+.rentry .rskills{font-size:.85rem;font-weight:700;color:var(--purple-dark);margin-top:2px}
+.rentry .rtxt{font-size:.92rem;margin-top:3px;white-space:pre-wrap}
+.rentry img{max-height:150px;max-width:100%;border-radius:6px;margin-top:6px;border:1px solid var(--border)}
+.setgrid{display:grid;gap:10px}
+.listrow{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--silver-light);font-size:.9rem}
+.listrow button{border:none;background:none;color:#DC2626;cursor:pointer;font-size:.8rem;font-weight:600}
+.addrow{display:flex;gap:6px;margin-top:8px}
+.addrow input,.addrow select{flex:1;min-width:80px}
+.note{font-size:.8rem;color:var(--muted);background:var(--silver-light);border-radius:8px;padding:8px 10px;margin-bottom:10px}
+.grouplink{color:var(--purple-mid);cursor:pointer;text-decoration:underline;text-decoration-style:dotted}
+.roster{font-size:.82rem;background:var(--purple-light);border-radius:6px;padding:6px 8px;margin:4px 0;color:var(--purple-dark)}
+.medialist{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.medialist img{max-width:90px;max-height:90px;border-radius:6px;border:1px solid var(--border);object-fit:cover}
+.medialist .thumb{position:relative}
+.medialist .thumb button{position:absolute;top:-6px;right:-6px;background:#DC2626;color:#fff;border:none;border-radius:50%;width:18px;height:18px;font-size:.65rem;line-height:1;cursor:pointer}
+.medialist .linkchip{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--purple-mid);color:var(--purple-mid);border-radius:999px;padding:4px 10px;font-size:.78rem;text-decoration:none}
+.medialist .linkchip button{border:none;background:none;color:#DC2626;cursor:pointer;font-size:.7rem;margin-left:2px}
+.mediaadd{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:6px}
+.mediaadd input[type=text]{flex:1;min-width:100px}
+.attendance{border-top:1px solid var(--border);padding:6px 10px 8px}
+.attrow{display:flex;justify-content:space-between;align-items:center;padding:3px 0;font-size:.85rem}
+.attbtns{display:flex;gap:5px}
+.attbtns button{border:1px solid var(--border);background:#fff;border-radius:999px;padding:3px 10px;font-size:.75rem;cursor:pointer;font-weight:600}
+.attbtns button.on{background:var(--acro);border-color:var(--acro);color:#fff}
+.attbtns button.on.late{background:#D97706;border-color:#D97706}
+.hiddenview{display:none!important}
+#printArea{display:none}
+@media print{
+  body>*{display:none!important}
+  #printArea{display:block!important}
+  .report{border:none;page-break-after:always;padding:0}
+  .rentry{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <h1>In <span class="syn">Synch</span> Summer Camp 2026</h1>
+  <div class="tag">One Team. One Dream. In Synch. &middot; Winchester</div>
+</div>
+<div class="mebar">
+  <label for="meSel">I am:</label>
+  <select id="meSel" onchange="setMe(this.value)"></select>
+  <button id="onlyMeBtn" class="pill-toggle" onclick="toggleOnlyMe()">Just my sessions</button>
+  <span id="syncDot" style="font-size:.72rem;color:var(--muted);margin-left:auto"></span>
+  <button id="adminBtn" class="pill-toggle" style="border-color:var(--silver);color:var(--muted)" onclick="adminToggle()">🔒</button>
+</div>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<div class="tabs" id="tabs"></div>
+<div class="wrap" id="app"></div>
+<div id="printArea"></div>
+<script>
+/* ============ FIREBASE CONFIG ============
+   Paste your Firebase web-app config between the braces below.
+   Leave empty {} to run in local-only mode (export/import files). */
+const FIREBASE_CONFIG={
+  apiKey: "AIzaSyBfJWuylMVTxHyLwNFq0x668aSzalWlCRo",
+  authDomain: "in-synch-lesson-plan.firebaseapp.com",
+  projectId: "in-synch-lesson-plan",
+  storageBucket: "in-synch-lesson-plan.firebasestorage.app",
+  messagingSenderId: "385965935257",
+  appId: "1:385965935257:web:0fdae706114c2890928608"
+};
+
+/* ================= DATA ================= */
+const LS='insynch2026_v1';
+const ACTS={'Warm up':'var(--warmup)','Routine':'var(--routine)','Skill':'var(--skill)','Figure':'var(--figure)','Acro':'var(--acro)'};
+const DAYS=[
+ {k:'sun',n:'Sunday',dd:'26 July'},
+ {k:'mon',n:'Monday',dd:'27 July'},
+ {k:'tue',n:'Tuesday',dd:'28 July'},
+ {k:'wed',n:'Wednesday',dd:'29 July'},
+ {k:'thu',n:'Thursday',dd:'30 July'},
+ {k:'fri',n:'Friday',dd:'31 July'},
+ {k:'sat',n:'Saturday',dd:'1 August'}
+];
+const DAYDATES={sun:'2026-07-26',mon:'2026-07-27',tue:'2026-07-28',wed:'2026-07-29',thu:'2026-07-30',fri:'2026-07-31',sat:'2026-08-01'};
+function dayLabel(k){const d=DAYS.find(x=>x.k===k);return d?d.n+' '+d.dd:k;}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,8);}
+
+function swimBlocks(landWarm,poolWarm,times,extra){
+  const b=[
+    {t:landWarm,label:'Land warm-up',land:true,asg:[]},
+    {t:poolWarm,label:'Pool warm-up',warmup:true,sharedPlan:'',asg:[]}
+  ];
+  times.forEach(t=>b.push({t:t,asg:[]}));
+  if(extra)b.push(extra);
+  return b;
+}
+const SWIM_SESSION_ORDER=['mon-swim-am','mon-swim-pm','tue-swim-am','tue-swim-pm','wed-swim-am','wed-swim-pm','thu-swim-am','thu-swim-pm','fri-swim-am','fri-swim-pm'];
+/* Land warm-up (15 min): only 4 coaches involved (Maisie sits this one out), so with 5 groups
+   one coach always doubles up. Which coach doubles rotates session to session for fairness.
+   Pool warm-up (30 min): unchanged — all 5 Routine coaches, one group each, rotating so every
+   coach leads every group exactly twice across the 10 sessions. */
+function buildPoolWarmupAsg(coaches,groups,s){
+  const asg=[];
+  coaches.forEach((c,ci)=>{
+    const g=groups[(s+ci)%groups.length];
+    asg.push({id:uid(),coach:c,activity:'Warm up',skills:'',group:g,notes:''});
+  });
+  return asg;
+}
+function buildLandWarmupAsg(coaches,groups,s){
+  if(!coaches.length)return[];
+  const n=coaches.length;
+  const doubleIdx=s%n; // which coach picks up the 5th (extra) group this session
+  const slots=coaches.concat([coaches[doubleIdx]]); // n+1 slots, one coach repeated
+  const asg=[];
+  slots.forEach((c,ci)=>{
+    const g=groups[(s+ci)%groups.length];
+    asg.push({id:uid(),coach:c,activity:'Warm up',skills:'',group:g,notes:''});
+  });
+  return asg;
+}
+function generateWarmupRotation(sessions,landCoaches,poolCoaches,groups){
+  if(!groups.length||!poolCoaches.length)return;
+  SWIM_SESSION_ORDER.forEach((sid,s)=>{
+    const sess=sessions[sid];
+    if(!sess)return;
+    const landBlock=sess.blocks.find(b=>b.land);
+    const poolBlock=sess.blocks.find(b=>b.warmup);
+    if(!landBlock||!poolBlock)return;
+    landBlock.asg=buildLandWarmupAsg(landCoaches,groups,s);
+    poolBlock.asg=buildPoolWarmupAsg(poolCoaches,groups,s);
+  });
+}
+const AM_TIMES=['8:45–9:00am','9:00–9:15am','9:15–9:30am','9:30–9:45am','9:45–10:00am','10:00–10:15am'];
+const PM_TIMES=['5:00–5:15pm','5:15–5:30pm','5:30–5:45pm','5:45–6:00pm','6:00–6:15pm','6:15–6:30pm'];
+/* Friday PM has its own fixed structure (not the rotating multi-coach system): land + pool
+   warm-up as usual, then each of the 5 Routine coaches gets 30 min alone with their own home
+   group to finish preparing (no staggering/rotating needed since it's just the 5 fixed pairs),
+   then performances, then free time for photos. */
+function friSwimPmRoutineAsg(){
+  return ROUTINE_ASSIGN.map(ra=>({id:uid(),coach:ra.coach,activity:'Routine',skills:'',group:ra.group,notes:''}));
+}
+
+/* ---- Routine rotation: 5 named coaches, fixed home group, 30-min Routine block each,
+   staggered so they're not all running music at once, plus a rotation through the other
+   4 coaches for the remaining time.
+
+   Session shape: 15-min land warm-up, 30-min pool warm-up, then SIX 15-min blocks
+   (8:45–10:15am / 5:00–6:30pm). A 2-block (30-min) Routine window has exactly 5 valid
+   starting positions in a 6-block timeline (0,1,2,3,4) — an exact match for 5 coaches, so
+   every coach gets precisely 2 blocks of Routine, no bonus block, no forced sharing. At most
+   2 coaches are ever on Routine at the same block (down from a full 5-way overlap in the old
+   45-min design), so the "not everyone on the speaker at once" goal is much better met too.
+   Because each coach now has 4 non-Routine blocks (up from 3), and there are exactly 4 other
+   groups to rotate through, every group meets every one of the other 4 coaches within a
+   single swim session — full "all 5 coaches per session" coverage natively, every day. ---- */
+const ROUTINE_ASSIGN=[
+  {coach:'Maisie',group:'Team Lavender'},
+  {coach:'Bianca',group:'Team Iris'},
+  {coach:'Daisy',group:'Team Violet'},
+  {coach:'Gemma',group:'Team Amethyst'},
+  {coach:'Romane',group:'Team Lilac'}
+];
+/* Land warm-up (8:00–8:15am / 4:15–4:30pm) drops Maisie — only these 4 coaches run it, so one
+   of them always has 2 groups. Pool warm-up keeps all 5 Routine coaches (see ROUTINE_ASSIGN). */
+const LAND_WARMUP_COACHES=ROUTINE_ASSIGN.map(ra=>ra.coach).filter(c=>c!=='Maisie');
+/* Fixed pool lanes, same every day, independent of which coach is supervising: */
+const LANE_NUMBER={'Team Amethyst':5,'Team Violet':4,'Team Lavender':3,'Team Iris':2,'Team Lilac':1};
+const LANE_ORDER=['Team Amethyst','Team Violet','Team Lavender','Team Iris','Team Lilac'];
+function sortByLane(list){ return [...list].sort((a,b)=>(LANE_NUMBER[b.group]||0)-(LANE_NUMBER[a.group]||0)); }
+/* Both patterns verified by exhaustive search: every coach visits every one of the other 4
+   groups exactly once, every group is visited by every one of the other 4 coaches exactly
+   once, within the single 6-block session — no gaps, no repeats. AM and PM use different
+   (but equally valid) pairings so the week doesn't feel identical morning and afternoon. */
+const ROUTINE_PATTERN_AM=[
+  {routine:[0],rot:[[1,3],[2,4],[3,2],[4,1]]},
+  {routine:[0,1],rot:[[2,3],[3,4],[4,2]]},
+  {routine:[1,2],rot:[[0,4],[3,0],[4,3]]},
+  {routine:[2,3],rot:[[0,1],[1,4],[4,0]]},
+  {routine:[3,4],rot:[[0,2],[1,0],[2,1]]},
+  {routine:[4],rot:[[0,3],[1,2],[2,0],[3,1]]}
+];
+const ROUTINE_PATTERN_PM=[
+  {routine:[0],rot:[[1,4],[2,3],[3,1],[4,2]]},
+  {routine:[0,1],rot:[[2,4],[3,2],[4,3]]},
+  {routine:[1,2],rot:[[0,3],[3,4],[4,0]]},
+  {routine:[2,3],rot:[[0,4],[1,0],[4,1]]},
+  {routine:[3,4],rot:[[0,1],[1,2],[2,0]]},
+  {routine:[4],rot:[[0,2],[1,3],[2,1],[3,0]]}
+];
+const ROUTINE_SESSIONS=[
+  {sid:'mon-swim-am',pattern:ROUTINE_PATTERN_AM,shift:0},{sid:'mon-swim-pm',pattern:ROUTINE_PATTERN_PM,shift:0},
+  {sid:'tue-swim-am',pattern:ROUTINE_PATTERN_AM,shift:1},{sid:'tue-swim-pm',pattern:ROUTINE_PATTERN_PM,shift:1},
+  {sid:'wed-swim-am',pattern:ROUTINE_PATTERN_AM,shift:2},{sid:'wed-swim-pm',pattern:ROUTINE_PATTERN_PM,shift:2},
+  {sid:'thu-swim-am',pattern:ROUTINE_PATTERN_AM,shift:3},{sid:'thu-swim-pm',pattern:ROUTINE_PATTERN_PM,shift:3},
+  {sid:'fri-swim-am',pattern:ROUTINE_PATTERN_AM,shift:4}
+  /* fri-swim-pm intentionally excluded — different structure, left for later */
+];
+/* Per-session content for the rotation blocks (the time not spent on each coach's own
+   Routine). Two ways to target it, filled in day by day as breakdowns are provided:
+   - byCoach: content follows the COACH (e.g. Monday AM — each coach runs the same station
+     topic no matter which group visits them).
+   - byGroup: content follows the GROUP (e.g. Monday PM figures — each group works the same
+     figure list no matter which coach they're rotated to).
+   - acro: flags specific (block index, coach) pairs as a 15-min Acro session instead of Figure/Skill
+     content, so each coach gets exactly one Acro slot with a non-home group that session.
+   Sessions/slots not listed here just stay blank until filled in. */
+const ROTATION_CONTENT={
+  'mon-swim-am':{
+    // Every Monday AM rotation slot is labelled Skill (not Figure), per Maisie's instruction —
+    // these are conditioning/drill themes, not named competition figures.
+    byCoach:{
+      'Bianca':{activity:'Skill',topic:'Airborne weight',bullets:[
+        'Support scull',
+        'Single leg vertical for 3 secs with creative leg movements',
+        'Vertical for 3 secs with creative leg movements',
+        'Unbalanced vertical (piked, arched & sideways) for 3 secs with creative leg movements'
+      ]},
+      'Daisy':{activity:'Skill',topic:'Rotations',bullets:[
+        '360 twist, slow rotation in support scull',
+        '360 twirl, rapid rotation with no change in height',
+        'Two direction twist, 180 right shoulder back, 180 left shoulder back - slow',
+        'Two direction twirl, 180 right shoulder back, 180 left shoulder back - rapid',
+        'For added challenge, 720 twists and twirls'
+      ]},
+      'Gemma':{activity:'Skill',topic:'Flexibility',bullets:[
+        'Knight position: sculling, angles and height',
+        'Table top to knight',
+        'Knight to vertical',
+        'Surface arch bent knee to vertical',
+        'For added challenge, knight 180/360 to vertical'
+      ]},
+      'Maisie':{activity:'Skill',topic:'Barracudas',bullets:[
+        'Thrust sculling and technique',
+        'Barracuda drills',
+        'Barracuda 360',
+        'Barracuda with flexibility'
+      ]},
+      'Romane':{activity:'Skill',topic:'Spins',bullets:[
+        'Spin sculling in hanging vertical and table top',
+        'Vertical 360 and Vertical 720',
+        'Ascending spin sculling',
+        'Combined spins (360 down, 360 up)',
+        'Continuous 720 or 1080 spins'
+      ]}
+    }
+  },
+  /* Tue/Wed/Thu AM: rounds 2–4 of the same 20-skill curriculum (Monday AM is round 1). Each
+     coach teaches a different one of their 4 topics each day, to whichever of their 4
+     "other" groups rotate through them that day (identical content to all 4, same as
+     Monday). Since a coach's 4 "other" groups are fixed all week and this repeats across
+     4 different days, by Thursday every group has received ALL 4 topics from EACH of their
+     4 non-home coaches — 16 of the 20 skills, fully natural, no catch-up needed. The
+     remaining 4 (their own home coach's topics, which that coach can structurally never
+     teach them directly) are covered by the Friday AM catch-up — see findMissingHomeSkills. */
+  'tue-swim-am':{
+    byCoach:{
+      'Bianca':{activity:'Skill',topic:'Artistry (Arms)',bullets:[
+        'Creative arm movements',
+        'Improvisation',
+        'Artistic expression'
+      ]},
+      'Daisy':{activity:'Skill',topic:'Airborne Weight',bullets:[
+        'Pike 180 to vertical',
+        'Pike 360 to vertical',
+        'Travelling single leg vertical',
+        'Unbalanced vertical hold (piked, arched & sideways) - ensure angle is between 15 degrees and 45 degrees from vertical'
+      ]},
+      'Gemma':{activity:'Skill',topic:'Rotations',bullets:[
+        'Split 180 close to vertical',
+        'Split 360 close to vertical',
+        'Surface arch 180 to vertical',
+        'For added challenge, knight 360 to vertical and surface arch 360 to vertical'
+      ]},
+      'Maisie':{activity:'Skill',topic:'Unbalanced Rotations',bullets:[
+        'Off angle twists',
+        'Off angle twirls',
+        'Unbalanced angles between 15 and 45 degrees from vertical'
+      ]},
+      'Romane':{activity:'Skill',topic:'Connections (pair)',bullets:[
+        'In pairs, back to back single leg connection',
+        'In pairs, back to back double leg connection',
+        'In pairs, face to face single leg connection',
+        'In pairs, face to face double leg connection'
+      ]}
+    }
+  },
+  'wed-swim-am':{
+    byCoach:{
+      'Bianca':{activity:'Skill',topic:'Artistry (Legs)',bullets:[
+        'Creative leg movements',
+        'Improvisation',
+        'Artistic expression'
+      ]},
+      'Daisy':{activity:'Skill',topic:'Spins',bullets:[
+        'Spin scull',
+        'Continuous 720 spins (360 for 12u)',
+        'Continuous 1080 spins (720 for 12u)',
+        'Combined spins',
+        'Spin drills with floats, pull buoy, Thera band etc'
+      ]},
+      'Gemma':{activity:'Skill',topic:'Thrusts',bullets:[
+        'Barracuda technique & sculling',
+        'Barracuda drills',
+        'Barracuda 360',
+        'Barracuda airborne split',
+        'For added challenge, Barracuda 720 & T9'
+      ]},
+      'Maisie':{activity:'Skill',topic:'Connections (team)',bullets:[
+        'Single leg connections (steps)',
+        'Surface connection (circle in pike)',
+        'Double leg connections (circle in vertical)',
+        'If time, rotating pair connections'
+      ]},
+      'Romane':{activity:'Skill',topic:'Flexibility',bullets:[
+        'Fishtail to knight',
+        'Knight to fishtail',
+        'Knight 180 to vertical',
+        'Surface arch to vertical',
+        'For added challenge, Knight 360 to vertical, surface arch 360 to vertical'
+      ]}
+    }
+  },
+  'thu-swim-am':{
+    byCoach:{
+      'Bianca':{activity:'Skill',topic:'Spins',bullets:[
+        'Creative swirls',
+        'Creative spins',
+        'Barracuda spins',
+        'Ascending spins'
+      ]},
+      'Daisy':{activity:'Skill',topic:'Flexibility',bullets:[
+        'Bent knee surface arch to vertical',
+        'BK surface arch 180 to vertical',
+        'BK surface arch 360 to vertical',
+        'Knight to fishtail through vertical',
+        'Knight to fishtail across the surface'
+      ]},
+      'Gemma':{activity:'Skill',topic:'Rotations',bullets:[
+        '180 twirls',
+        '360 twirls',
+        'Two direction twirl/twist',
+        'Unbalanced twirls',
+        'Unbalanced twists'
+      ]},
+      'Maisie':{activity:'Skill',topic:'Spins',bullets:[
+        'Spin scull',
+        'Continuous 720 spins (360 for 12u)',
+        'Continuous 1080 spins (720 for 12u)',
+        'Split 360 to vertical',
+        'Spin drills with floats, pull buoy, Thera band etc'
+      ]},
+      'Romane':{activity:'Skill',topic:'Thrusts',bullets:[
+        'Barracuda technique & sculling',
+        'Barracuda drills',
+        'Barracuda 360',
+        'Barracuda airborne split',
+        'For added challenge, Barracuda 720 & T9'
+      ]}
+    }
+  },
+  /* Mon/Tue/Wed/Thu PM (Friday PM has its own structure, see friSwimPmRoutineAsg): each coach's
+     4 non-Routine blocks split into 1 Acro slot (with a different, non-home group) + 3 Figure
+     slots. Each cluster has exactly 12 figures across the week, 3 per afternoon — an exact fit,
+     zero leftover, so no catch-up mechanism is needed (unlike the old Monday-only version).
+     acro: one (blockIdx,coach) pair per coach, a full bijection onto the 5 groups, drawn only
+     from pairings that actually occur in that session's rotation pattern, and varied day to day
+     rather than repeating the same coach/group pairing.
+     byGroupBlock: each group's 3 non-Acro blocks get that day's 3 cluster figures — content
+     follows the group, not the coach, since all groups in a cluster work the same 3 figures on
+     a given afternoon regardless of who's rotating through them. */
+  'mon-swim-pm':{
+    acro:[
+      {blockIdx:3,coach:'Maisie'},  // hosts Lilac
+      {blockIdx:3,coach:'Bianca'},  // hosts Lavender
+      {blockIdx:0,coach:'Daisy'},   // hosts Amethyst
+      {blockIdx:1,coach:'Gemma'},   // hosts Violet
+      {blockIdx:3,coach:'Romane'}   // hosts Iris
+    ],
+    byGroupBlock:{
+      'Team Lavender':{2:'Flamingo Bent Knee Combined Spin 360 + 360',4:'Cyclone Open 180',5:'Barracuda Airborne Split Spin Up 180'},
+      'Team Lilac':{0:'Flamingo Bent Knee Combined Spin 360 + 360',1:'Cyclone Open 180',2:'Barracuda Airborne Split Spin Up 180'},
+      'Team Iris':{0:'Flamingo Bent Knee Combined Spin 360 + 360',4:'Cyclone Open 180',5:'Barracuda Airborne Split Spin Up 180'},
+      'Team Violet':{0:'Butterfly Hybrid',4:'Two Fouetté Rotations, Vertical Continuous Spinning 720',5:'Flying Fish Spinning 180'},
+      'Team Amethyst':{1:'Butterfly Hybrid',2:'Two Fouetté Rotations, Vertical Continuous Spinning 720',5:'Flying Fish Spinning 180'}
+    }
+  },
+  'tue-swim-pm':{
+    acro:[
+      {blockIdx:3,coach:'Maisie'},  // hosts Violet
+      {blockIdx:2,coach:'Bianca'},  // hosts Lilac
+      {blockIdx:0,coach:'Daisy'},   // hosts Lavender
+      {blockIdx:4,coach:'Gemma'},   // hosts Iris
+      {blockIdx:1,coach:'Romane'}   // hosts Amethyst
+    ],
+    byGroupBlock:{
+      'Team Lavender':{1:'Swordfish Straight Leg Ariana Rotation',2:'Whip Continuous Spin 720',3:'Venus'},
+      'Team Lilac':{0:'Swordfish Straight Leg Ariana Rotation',1:'Whip Continuous Spin 720',5:'Venus'},
+      'Team Iris':{2:'Swordfish Straight Leg Ariana Rotation',3:'Whip Continuous Spin 720',5:'Venus'},
+      'Team Violet':{0:'Vertical Twist To Bent Knee, Twist To Vertical, 180 Open To Split, Walkout Front',4:'Rocket Split Bent Knee Hybrid',5:'Walkover Back Closing 180 Continuous Spin 720'},
+      'Team Amethyst':{0:'Vertical Twist To Bent Knee, Twist To Vertical, 180 Open To Split, Walkout Front',4:'Rocket Split Bent Knee Hybrid',5:'Walkover Back Closing 180 Continuous Spin 720'}
+    }
+  },
+  'wed-swim-pm':{
+    acro:[
+      {blockIdx:1,coach:'Maisie'},  // hosts Lilac
+      {blockIdx:1,coach:'Bianca'},  // hosts Lavender
+      {blockIdx:4,coach:'Daisy'},   // hosts Amethyst
+      {blockIdx:3,coach:'Gemma'},   // hosts Violet
+      {blockIdx:1,coach:'Romane'}   // hosts Iris
+    ],
+    byGroupBlock:{
+      'Team Lavender':{0:'Saturn',2:'Albatross Spin Up 360',5:'Walkover Back Closing 360'},
+      'Team Lilac':{0:'Saturn',4:'Albatross Spin Up 360',5:'Walkover Back Closing 360'},
+      'Team Iris':{0:'Saturn',2:'Albatross Spin Up 360',3:'Walkover Back Closing 360'},
+      'Team Violet':{2:'Ballet Leg, Flamingo Bent Knee Roll Back, Join To Vertical, Half Twist, 360 Open To Split, Walkout',4:'Fishtail, Knight, Continuous Spin 720',5:'Combined Spin 720, Continuous Spin 1080'},
+      'Team Amethyst':{0:'Ballet Leg, Flamingo Bent Knee Roll Back, Join To Vertical, Half Twist, 360 Open To Split, Walkout',3:'Fishtail, Knight, Continuous Spin 720',5:'Combined Spin 720, Continuous Spin 1080'}
+    }
+  },
+  'thu-swim-pm':{
+    acro:[
+      {blockIdx:1,coach:'Maisie'},  // hosts Violet
+      {blockIdx:0,coach:'Bianca'},  // hosts Lilac
+      {blockIdx:0,coach:'Daisy'},   // hosts Lavender
+      {blockIdx:2,coach:'Gemma'},   // hosts Iris
+      {blockIdx:3,coach:'Romane'}   // hosts Amethyst
+    ],
+    byGroupBlock:{
+      'Team Lavender':{1:'Ipanema Spinning 180',4:'London Continuous Spin 720',5:'Flying Fish Spinning 360'},
+      'Team Lilac':{3:'Ipanema Spinning 180',4:'London Continuous Spin 720',5:'Flying Fish Spinning 360'},
+      'Team Iris':{0:'Ipanema Spinning 180',1:'London Continuous Spin 720',5:'Flying Fish Spinning 360'},
+      'Team Violet':{0:'Thrust Bent Knee Twirl Spin 360',2:'Fishtail Half Twist Continuous Spin 720',3:'Swordfish Straight Leg Knight Walkout'},
+      'Team Amethyst':{2:'Thrust Bent Knee Twirl Spin 360',4:'Fishtail Half Twist Continuous Spin 720',5:'Swordfish Straight Leg Knight Walkout'}
+    }
+  }
+};
+const CLUSTER_A=new Set(['Team Lavender','Team Iris','Team Lilac']);
+const CLUSTER_B=new Set(['Team Amethyst','Team Violet']);
+function clusterOf(group){ return CLUSTER_A.has(group)?'A':(CLUSTER_B.has(group)?'B':null); }
+function fmtStation(sc){ if(!sc.bullets||!sc.bullets.length) return sc.topic; return sc.topic+'\n'+sc.bullets.map(b=>'• '+b).join('\n'); }
+// the full 12-figure menu per cluster (Mon/Tue/Wed/Thu PM, 3 figures per afternoon — an exact
+// fit with no leftover), in the order each round draws its 3 from
+const CLUSTER_A_FIGURES=['Flamingo Bent Knee Combined Spin 360 + 360','Cyclone Open 180','Barracuda Airborne Split Spin Up 180','Swordfish Straight Leg Ariana Rotation','Whip Continuous Spin 720','Venus','Saturn','Albatross Spin Up 360','Walkover Back Closing 360','Ipanema Spinning 180','London Continuous Spin 720','Flying Fish Spinning 360'];
+const CLUSTER_B_FIGURES=['Butterfly Hybrid','Two Fouetté Rotations, Vertical Continuous Spinning 720','Flying Fish Spinning 180','Vertical Twist To Bent Knee, Twist To Vertical, 180 Open To Split, Walkout Front','Rocket Split Bent Knee Hybrid','Walkover Back Closing 180 Continuous Spin 720','Ballet Leg, Flamingo Bent Knee Roll Back, Join To Vertical, Half Twist, 360 Open To Split, Walkout','Fishtail, Knight, Continuous Spin 720','Combined Spin 720, Continuous Spin 1080','Thrust Bent Knee Twirl Spin 360','Fishtail Half Twist Continuous Spin 720','Swordfish Straight Leg Knight Walkout'];
+function figuresListFor(group){ const cl=clusterOf(group); return cl==='A'?CLUSTER_A_FIGURES:(cl==='B'?CLUSTER_B_FIGURES:[]); }
+const ALL_FIGURES=[...CLUSTER_A_FIGURES,...CLUSTER_B_FIGURES];
+const SKILL_ROUNDS=['mon-swim-am','tue-swim-am','wed-swim-am','thu-swim-am'];
+
+/* --- Figures & Skills library: descriptions/images/links attached to the figure/skill itself
+   (not to a specific assignment instance), so they show automatically wherever that figure or
+   skill is scheduled all week, and survive "Regenerate Routine schedule" / "Regenerate rotation"
+   (which otherwise wipe anything typed into individual session blocks). Skills are keyed by
+   "round session id|coach" since the same topic name can legitimately repeat with different
+   content across rounds/coaches (e.g. Gemma teaches two different things both called
+   "Rotations"). Figures are a small fixed catalog of 8 names, so the name itself is the key. */
+function skillKey(sid,coach){ return sid+'|'+coach; }
+function resolveSkillKey(sid,a){
+  if(!a||a.activity!=='Skill')return null;
+  if(SKILL_ROUNDS.includes(sid))return skillKey(sid,a.coach);
+  if(sid==='fri-swim-am'){
+    // Friday is a catch-up: the content actually belongs to the group's own home coach,
+    // from whichever of the 4 rounds it was originally drawn from — find it by matching topic.
+    const home=ROUTINE_ASSIGN.find(ra=>ra.group===a.group);
+    if(!home)return null;
+    for(const rsid of SKILL_ROUNDS){
+      const src=ROTATION_CONTENT[rsid]&&ROTATION_CONTENT[rsid].byCoach&&ROTATION_CONTENT[rsid].byCoach[home.coach];
+      if(src&&a.skills&&a.skills.startsWith(src.topic))return skillKey(rsid,home.coach);
+    }
+  }
+  return null;
+}
+function resolveFigureKey(a){
+  if(!a||a.activity!=='Figure'||!a.skills)return null;
+  const base=a.skills.split(' — catch-up')[0];
+  return ALL_FIGURES.includes(base)?base:null;
+}
+function skillFigureMediaHtml(sid,a){
+  let media=null;
+  if(a.activity==='Skill'){ const k=resolveSkillKey(sid,a); if(k)media=S.skillMedia[k]; }
+  else if(a.activity==='Figure'){ const k=resolveFigureKey(a); if(k)media=S.figureMedia[k]; }
+  if(!media)return '';
+  const hasDesc=media.description, hasMedia=(media.images&&media.images.length)||(media.links&&media.links.length);
+  if(!hasDesc&&!hasMedia)return '';
+  return (hasDesc?`<div class="nt" style="font-style:italic">${esc(media.description)}</div>`:'')+mediaDisplayHtml(media);
+}
+
+/* --- "Own Routine coach's skill" catch-up on Friday AM ---
+   Monday–Thursday AM run 4 rounds of skill content (5 topics per round, one per coach). Since
+   a coach's 4 "other" groups are fixed all week and each round is a different day, by
+   Thursday every group has received ALL 4 topics from EACH of their 4 non-home coaches —
+   16 of the 20 skills, entirely naturally, zero catch-up needed for those.
+   The remaining 4 — their own Routine coach's 4 topics — can structurally never reach them
+   directly (that coach is always on Routine with them, never Skill), on ANY day of the week.
+   Friday AM's 4 rotation blocks are reserved for exactly this: each group gets all 4 of their
+   own coach's topics, delivered by whichever coach is already rotating through them that day
+   (the skill belongs to the group, not to a specific deliverer — same idea as the Monday PM
+   figure catch-up). 5 groups × 4 topics = 20 items into 5 groups × 4 Friday slots = 20 slots:
+   an exact fit, verified by test. */
+function findMissingHomeSkills(){
+  const rounds=['mon-swim-am','tue-swim-am','wed-swim-am','thu-swim-am'];
+  const out=[];
+  ROUTINE_ASSIGN.forEach(ra=>{
+    rounds.forEach(sid=>{
+      const rc=ROTATION_CONTENT[sid];
+      const src=rc&&rc.byCoach&&rc.byCoach[ra.coach];
+      if(src) out.push({group:ra.group,homeCoach:ra.coach,activity:src.activity,topic:src.topic,bullets:src.bullets});
+    });
+  });
+  return out;
+}
+function findHomeSkillCatchupSlots(missingSkills,targetSid){
+  const sess=S_REF.sessions[targetSid];
+  const qb=sess.blocks.filter(b=>!b.land&&!b.warmup);
+  const usedBlocksForGroup={};
+  const placements=[],unplaced=[];
+  missingSkills.forEach(ms=>{
+    let placed=false;
+    qb.forEach((b,bi)=>{
+      if(placed)return;
+      if(usedBlocksForGroup[ms.group]&&usedBlocksForGroup[ms.group].has(bi))return;
+      const e=b.asg.find(a=>a.group===ms.group&&a.activity!=='Routine');
+      if(!e||(e.skills&&e.skills.indexOf('catch-up')!==-1))return; // no slot, or already used for another catch-up this run
+      placements.push({blockIdx:bi,group:ms.group,homeCoach:ms.homeCoach,activity:ms.activity,topic:ms.topic,bullets:ms.bullets});
+      usedBlocksForGroup[ms.group]=usedBlocksForGroup[ms.group]||new Set();
+      usedBlocksForGroup[ms.group].add(bi);
+      placed=true;
+    });
+    if(!placed)unplaced.push(ms);
+  });
+  return {placements,unplaced};
+}
+let FRIDAY_AM_MAKEUP={uncovered:[]}; // recomputed each time applyBlockOverrides runs
+let S_REF=null;
+function applyBlockOverrides(sessions){
+  S_REF={sessions};
+  const missingHomeSkills=findMissingHomeSkills();
+  const {placements:hsPlacements,unplaced:hsUnplaced}=findHomeSkillCatchupSlots(missingHomeSkills,'fri-swim-am');
+  FRIDAY_AM_MAKEUP={uncovered:hsUnplaced.map(u=>({coach:u.homeCoach,topic:u.topic,group:u.group}))};
+  const sess=sessions['fri-swim-am'];
+  if(sess){
+    const qBlocks=sess.blocks.filter(b=>!b.land&&!b.warmup);
+    hsPlacements.forEach(p=>{
+      const b=qBlocks[p.blockIdx];if(!b)return;
+      const e=b.asg.find(a=>a.group===p.group&&a.activity!=='Routine');
+      if(e){
+        e.activity=p.activity;
+        e.skills=fmtStation({activity:p.activity,topic:p.topic+' — own Routine coach’s station (catch-up)',bullets:p.bullets});
+      }
+    });
+  }
+}
+
+function generateRoutineSchedule(sessions){
+  const n=ROUTINE_ASSIGN.length;
+  ROUTINE_SESSIONS.forEach(({sid,pattern,shift})=>{
+    const sess=sessions[sid];
+    if(!sess)return;
+    const qBlocks=sess.blocks.filter(b=>!b.land&&!b.warmup);
+    const rc=ROTATION_CONTENT[sid];
+    qBlocks.forEach((blk,bi)=>{
+      const p=pattern[bi];
+      if(!p)return;
+      const asg=[];
+      p.routine.forEach(idx=>{
+        const ra=ROUTINE_ASSIGN[(idx+shift)%n];
+        asg.push({id:uid(),coach:ra.coach,activity:'Routine',skills:'',group:ra.group,notes:''});
+      });
+      p.rot.forEach(([ci,gi])=>{
+        const c=ROUTINE_ASSIGN[(ci+shift)%n],g=ROUTINE_ASSIGN[(gi+shift)%n];
+        let activity='',skills='';
+        const isAcro=rc&&rc.acro&&rc.acro.some(a=>a.blockIdx===bi&&a.coach===c.coach);
+        if(isAcro){ activity='Acro'; skills='15-min Acro session with '+g.group.replace('Team ','')+' (not their own Routine group).'; }
+        else{
+          let sc=null;
+          if(rc&&rc.byGroupBlock&&rc.byGroupBlock[g.group]&&rc.byGroupBlock[g.group][bi]!==undefined){
+            sc={activity:'Figure',topic:rc.byGroupBlock[g.group][bi]};
+          }
+          if(!sc&&rc&&rc.byCoachCluster&&rc.byCoachCluster[c.coach]){
+            const cl=clusterOf(g.group);
+            sc=cl&&rc.byCoachCluster[c.coach][cl];
+          }
+          if(!sc) sc=(rc&&rc.byCoach&&rc.byCoach[c.coach])||(rc&&rc.byGroup&&rc.byGroup[g.group]);
+          if(sc){ activity=sc.activity; skills=fmtStation(sc); }
+        }
+        asg.push({id:uid(),coach:c.coach,activity,skills,group:g.group,notes:''});
+      });
+      blk.asg=asg;
+    });
+  });
+}
+
+/* Pool warm-up (30 min): 5 distinct sets, each repeated once across the week's 10 pool
+   warm-ups. Hand-authored content — stored as the default sharedPlan so a fresh device (or a
+   migration where nothing's been hand-typed yet) starts pre-filled; if a coach has already
+   typed something different into a specific session's plan, that's preserved instead (see
+   migrateSwimSchedule's poolPlans preservation). */
+const POOL_WARMUP_SET_A=[
+  '100 Free (tumble turns throughout. Aim to breathe every 5 strokes)',
+  '100 Breast Kick (arms streamline. Minimal breathing)',
+  '100 Fly Kick On Back (arms streamline. Breathing throughout)',
+  '25 under fly kick','25 front crawl','25 back stroke','25 under fly kick','25 fly full stroke','25 front crawl',
+  '25 torpedo body rolls',
+  '25 double ballet leg (single ballet leg for Lilac & Lavender)',
+  '25 right leg walkovers','25 left leg walkovers',
+  '25 single arm eggbeater',
+  '25 pike, box split, surface arch',
+  '25 horizontal barracudas',
+  '25 dolphin scull head first',
+  '30 scull fishtail hold x2','30 scull vertical hold x2','30 scull knight hold x2',
+  'x4 barracudas'
+].map(x=>'• '+x).join('\n');
+const POOL_WARMUP_SET_B=[
+  ['100 Free (tumble turns throughout. Aim to breathe every 5 strokes)','50 Breast with tennis ball under chin','25 Under (stroke of choice)','25 Fly Kick On Back (arms streamline. Breathing throughout)'],
+  ['x6 Timed 25 Wind Sprint, 25 Backstroke (from a dive. 1 length freestyle no breathing, tumble turn into 1 length backstroke. Climb out at wall) Restart when the clock reaches 1 minute 15 seconds (1:30 for Lilac & Lavender). Repeat six times.','Walk around poolside once, take water with them','100 Back Kick (arms streamline. Relaxed pace)'],
+  ['50 Ballet Leg flex and point (25 right, 25 left)','50 Eggbeater head first on back, arms overhead','50 Travelling Side Fishtail (25 right, 25 left. Travel towards vertical leg)','50 Dolphin Scull, Surface Arch, Knight, Vertical, Tuck Out, Repeat','50 Side Flutter One Arm Up','x2 Vertical 10 Support Scull Straight Into 10 Torpedo, 10 Support Scull, 10 Torpedo','x2 Vertical 720 Continuous Spin (360 Spin for Lilac & Lavender - 1080 Spin for Amethyst)','x2 Surface Arch Bent Knee x20 support scull','x2 Vertical 360 twist (must use support scull)']
+].map(sec=>sec.map(x=>'• '+x).join('\n')).join('\n\n');
+const POOL_WARMUP_SET_C=[
+  ['100 Free (Tumble turns throughout. Aim to breathe every 5 strokes)','200m Kick Set (No float, no nose clips, no sculling)'],
+  ['25 Fly kick under (NO ARMS)','25 Fly kick on back arms streamline','25 Back kick arms vertically to ceiling (hands touching)','25 Back kick arms streamline','25 Breast kick under (NO ARMS)','25 Breast kick arms streamline','50 free kick arms streamline','100 Free Pull (four lengths front crawl arms only. Tumble turns)'],
+  ['50 Double Arm Back (2 lengths backstroke kick with double arm reverse fly arms. Slow relaxed pace)','50 Free Stretch (stretch in any way the athletes chooses to)','25 Slow Back Walkovers (alternate leg)','25 Slow Front Walkovers (alternate leg)','50 Head First Boost, One Breast Stroke Under, Repeat (Amethyst, Iris & Violet Double Arm Boost)','50 In pairs - One in headfirst back layout with arms overhead, One front crawl with head on partners feet','50 in pairs - Back to back, interlink arms, free kick, roll over when partner needs to breathe','x4 Hanging vertical, rise to knight, through vertical to fishtail, sink to hanging vertical, repeat','x2 Barracuda 360']
+].map(sec=>sec.map(x=>'• '+x).join('\n')).join('\n\n');
+const POOL_WARMUP_SET_D=[
+  '100 Breast',
+  '100 Back kick, throw and catch tennis ball',
+  '400m Timed Swim (aim for under 6 minutes. Start in the water. Breathing every 3 strokes. Tumble turns throughout)',
+  '100 Single Arm Fly (arms streamline, use one arm at a time. Relaxed moderate pace)',
+  '50 Torpedo Scull Sprint',
+  '25 Dolphin Scull','25 Reverse Scoop Scull',
+  '25 Right leg walkovers','25 Left leg walkovers',
+  '50 Single arm eggbeater',
+  '50 Pike, box split, surface arch, repeat',
+  '25 Under, 60 second rest, 25 Under',
+  '50 Side flutter, Front pike, Fishtail, Vertical, 360 twirl, Tuck out, repeat (No 360 twirl for Lilac & Lavender)',
+  'x4 30 second vertical flutter kick',
+  'x2 Vertical Bent Knee on wall','x2 Fishtail on wall','x2 Knight on wall','x2 Vertical on wall','x2 Double Ballet Leg hold wall','x2 Surface arch bent knee, foot on wall'
+].map(x=>'• '+x).join('\n');
+const POOL_WARMUP_SET_E=[
+  '• 200m Alternate Breathing Free',
+  '   - 25 Freestyle breathing every 3rd stroke','   - 25 Freestyle breathing every 5th stroke','   - 25 Freestyle breathing every 7th stroke','   - 25 Freestyle breathing every 9th stroke',
+  '   - 25 Freestyle breathing every 9th stroke','   - 25 Freestyle breathing every 7th stroke','   - 25 Freestyle breathing every 5th stroke','   - 25 Freestyle breathing every 3rd stroke',
+  '• 150m Hypoxic Test',
+  '   - 25 under fly kick','   - 25 front crawl','   - 25 back stroke','   - 25 under fly kick','   - 25 fly full stroke','   - 25 front crawl',
+  '• Repeat Full Set (Start with a dive. Swim full strokes)',
+  '• 50 Breaststroke Legs Fly Arms',
+  '',
+  '• 25 Right Leg Flamingo','• 25 Left Leg Flamingo',
+  '• 50 Underwater torpedo, one leg out',
+  '• Underwater Bulldog with all groups'
+].join('\n');
+const POOL_WARMUP_PLANS={
+  'mon-swim-am':POOL_WARMUP_SET_A, 'wed-swim-pm':POOL_WARMUP_SET_A,
+  'mon-swim-pm':POOL_WARMUP_SET_B, 'thu-swim-am':POOL_WARMUP_SET_B,
+  'tue-swim-am':POOL_WARMUP_SET_C, 'thu-swim-pm':POOL_WARMUP_SET_C,
+  'tue-swim-pm':POOL_WARMUP_SET_D, 'fri-swim-am':POOL_WARMUP_SET_D,
+  'wed-swim-am':POOL_WARMUP_SET_E, 'fri-swim-pm':POOL_WARMUP_SET_E
+};
+/* Builds just the Mon–Fri swim sessions (correct block shape/times for the CURRENT app logic),
+   with empty asg arrays — coach/group/Routine/Skill/Figure/Acro content gets filled in
+   afterwards by generateWarmupRotation / generateRoutineSchedule / applyBlockOverrides.
+   Pulled out on its own so both seed() and the schedule-migration logic (below) can build a
+   guaranteed-fresh, correctly-shaped set of swim sessions without duplicating this code. */
+function buildFreshSwimSessions(){
+  const sessions={};
+  function addSess(id,day,title,type,time,blocks){sessions[id]={id,day,title,type,time,blocks};}
+  ['mon','tue','wed','thu','fri'].forEach(d=>{
+    addSess(d+'-swim-am',d,'Swim Training (AM)','swim','8:00–10:15am',swimBlocks('8:00–8:15am','8:15–8:45am',AM_TIMES));
+    if(d==='fri'){
+      addSess('fri-swim-pm','fri','Swim Training (PM)','swim','4:15–6:30pm',[
+        {t:'4:15–4:30pm',label:'Land warm-up',land:true,asg:[]},
+        {t:'4:30–5:00pm',label:'Pool warm-up',warmup:true,sharedPlan:'',asg:[]},
+        {t:'5:00–5:30pm',label:'Routine practice',asg:friSwimPmRoutineAsg()},
+        {t:'5:30–6:00pm',label:'Routine Performances',asg:[{id:uid(),coach:'',activity:'Routine',skills:'Routine performances for parents/coaches',group:'All groups',notes:''}]},
+        {t:'6:00–6:30pm',label:'Free Time & Photos',asg:[{id:uid(),coach:'',activity:'',skills:'Free time and photos with your group',group:'All groups',notes:''}]}
+      ]);
+    }else{
+      addSess(d+'-swim-pm',d,'Swim Training (PM)','swim','4:15–6:30pm',swimBlocks('4:15–4:30pm','4:30–5:00pm',PM_TIMES));
+    }
+  });
+  SWIM_SESSION_ORDER.forEach(sid=>{
+    const sess=sessions[sid];if(!sess)return;
+    const pool=sess.blocks.find(b=>b.warmup);
+    if(pool&&POOL_WARMUP_PLANS[sid])pool.sharedPlan=POOL_WARMUP_PLANS[sid];
+  });
+  return sessions;
+}
+/* Builds the full Sun–Sat day-by-day itinerary (S.schedule) — the Week/Day view chip list.
+   Entirely derived from fixed times/titles/coach names, no hand-typed content lives here (that
+   all lives in S.sessions instead), so it's always safe to fully rebuild from scratch. Pulled
+   out on its own so both seed() and the schedule-migration logic can regenerate it identically
+   whenever the day-by-day structure changes (e.g. moving an activity to a different day). */
+function buildFreshSchedule(){
+  function wk(d,mid,aft,eve){
+    const it=[
+      {t:'7:00am',ti:'Wake up',cat:'gen'},
+      {t:'7:15–7:45am',ti:'Breakfast',cat:'meal'},
+      {t:'7:45am',ti:'Walk to Training Pool',cat:'gen'},
+      {t:'8:00–10:15am',ti:'Swim Training (AM)',cat:'swim',sid:d+'-swim-am'},
+      {t:'10:15am',ti:'Change / shower',cat:'gen'},
+      {t:'10:30–11:30am',ti:'Snack & Rest',cat:'rest'},
+      mid,
+      {t:'12:30pm',ti:'Return belongings to room',cat:'gen'},
+      {t:'1:00–2:00pm',ti:'Lunch',cat:'meal'}
+    ];
+    if(d==='thu'){ it.push({t:'2:00–3:45pm',ti:'Trip to Winchester Town Centre',cat:'gen'}); }
+    else{ it.push({t:'2:00–3:00pm',ti:'Rest',cat:'rest'}); if(aft)it.push(aft); }
+    it.push(
+      {t:'4:00pm',ti:'Walk to Training Pool',cat:'gen'},
+      {t:'4:15–6:30pm',ti:'Swim Training (PM)',cat:'swim',sid:d+'-swim-pm'},
+      {t:'6:30pm',ti:'Change / shower',cat:'gen'},
+      {t:'7:00–8:00pm',ti:'Dinner',cat:'meal'},
+      eve,
+      {t:'9:00–10:00pm',ti:'Rest',cat:'rest'},
+      {t:'10:00pm',ti:'Bed',cat:'gen'}
+    );
+    return it;
+  }
+  return {
+    sun:[
+      {t:'4:00pm',ti:'Athletes arrive',cat:'gen'},
+      {t:'4:30–5:30pm',ti:'Welcome talk · Meet the coaches · Room allocations',cat:'gen'},
+      {t:'5:30–6:00pm',ti:'Unpack',cat:'gen'},
+      {t:'6:00–7:00pm',ti:'Dinner',cat:'meal'},
+      {t:'7:00–8:00pm',ti:'Team Building',cat:'eve',sid:'sun-eve'},
+      {t:'8:00–9:45pm',ti:'Rest',cat:'rest'},
+      {t:'10:00pm',ti:'Bed',cat:'gen'}
+    ],
+    mon:wk('mon',{t:'11:30am–12:30pm',ti:'Land Training — Coach Bianca',cat:'land',sid:'mon-land'},
+      {t:'3:00–4:00pm',ti:'Jazz Workshop — Coach Melissa',cat:'dance',sid:'mon-dance'},
+      {t:'8:00–9:00pm',ti:'Craft Activity',cat:'eve',sid:'mon-eve'}),
+    tue:wk('tue',{t:'11:30am–12:30pm',ti:'Yoga — Coach Rebekah',cat:'yoga',sid:'tue-yoga'},
+      {t:'3:00–4:00pm',ti:'Land Training — Coach Romane',cat:'land',sid:'tue-land'},
+      {t:'8:00–9:00pm',ti:'Injury Prevention — Coach Daisy',cat:'eve',sid:'tue-eve'}),
+    wed:wk('wed',{t:'11:30am–12:30pm',ti:'Land Training — Coach Daisy',cat:'land',sid:'wed-land'},
+      {t:'3:00–4:00pm',ti:'Ballet Workshop — Coach Lucy',cat:'dance',sid:'wed-dance'},
+      {t:'8:00–9:00pm',ti:'Nutrition Workshop — Coach Bianca',cat:'eve',sid:'wed-eve'}),
+    thu:wk('thu',{t:'11:30am–12:30pm',ti:'Land Training — Coach Gemma',cat:'land',sid:'thu-land'},
+      null,
+      {t:'8:00–9:00pm',ti:'Coach Cards',cat:'eve',sid:'thu-eve'}),
+    fri:wk('fri',{t:'11:30am–12:30pm',ti:'Land Training — Coach Bianca',cat:'land',sid:'fri-land'},
+      {t:'3:00–4:00pm',ti:'Routine Land Drill',cat:'land',sid:'fri-land2'},
+      {t:'8:00–9:00pm',ti:'Neon Glow Goodbye Party',cat:'eve',sid:'fri-eve'}),
+    sat:[
+      {t:'8:30am',ti:'Wake up',cat:'gen'},
+      {t:'9:00–10:00am',ti:'Breakfast',cat:'meal'},
+      {t:'10:00–10:30am',ti:'Pack and tidy rooms',cat:'gen'},
+      {t:'10:30–11:00am',ti:'Goodbye Meeting',cat:'gen'},
+      {t:'11:00am',ti:'Athletes Depart',cat:'gen'}
+    ]
+  };
+}
+/* Bump this whenever the swim-session generation logic OR the day-by-day schedule structure
+   changes (block count, times, Routine length, Skill/Figure labels, which day an activity
+   falls on, etc). On load, if a saved app on a coach's device or in the cloud was seeded with
+   an older version, its swim sessions and day itinerary get silently rebuilt fresh — so nobody
+   has to remember to hit "Regenerate" after every update. Land warm-up notes and the pool
+   warm-up shared plan (the only hand-typed content in swim sessions) are preserved across the
+   rebuild; roster, feedback and PIN are untouched. */
+const SCHEDULE_VERSION=11;
+
+function seed(){
+  const coaches=['Maisie','Bianca','Daisy','Gemma','Lucy','Melissa','Rebekah','Romane'];
+  const groups=['Team Lavender','Team Lilac','Team Violet','Team Amethyst','Team Iris'];
+  const athletes=[
+   ...['Amanda','Helena','Laura','Lena','Meg','Noa-Grace','Rose','Serena','Sophie'].map(n=>({n,g:'Team Lavender'})),
+   ...['Abbie','Alisa S','Allegra','Anna P','Elizabeth','Erin','Evie','Filippa','Holly','Lina'].map(n=>({n,g:'Team Lilac'})),
+   ...['Anna C','Ava','Franki','Frida','Hazeley','Immy','Inger','Leonora','Miranda','Sarah F','Tabitha'].map(n=>({n,g:'Team Violet'})),
+   ...['Abigaël','Annabelle','Caroline','Charlotte','GG','Juliet','Maya','Sára','Zoë'].map(n=>({n,g:'Team Amethyst'})),
+   ...['Adah','Alisa N','Ella','Emma','Farida','Giulia','Sarah A','Selma','Vanessa','Victoria'].map(n=>({n,g:'Team Iris'}))
+  ];
+  const sessions=buildFreshSwimSessions();
+  function addSess(id,day,title,type,time,blocks){sessions[id]={id,day,title,type,time,blocks};}
+  function one(id,day,title,type,time,coach,skills){
+    addSess(id,day,title,type,time,[{t:time,asg:[{id:uid(),coach:coach,activity:'',skills:skills||'Tap Edit to add the session plan',group:'All groups',notes:''}]}]);
+  }
+  one('sun-eve','sun','Team Building','eve','7:00–8:00pm','Maisie','');
+  one('mon-land','mon','Land Training','land','11:30am–12:30pm','Bianca','');
+  one('mon-dance','mon','Jazz Workshop','dance','3:00–4:00pm','Melissa','');
+  one('mon-eve','mon','Craft Activity','eve','8:00–9:00pm','','');
+  one('tue-yoga','tue','Yoga','yoga','11:30am–12:30pm','Rebekah','');
+  one('tue-land','tue','Land Training','land','3:00–4:00pm','Romane','');
+  one('tue-eve','tue','Injury Prevention','eve','8:00–9:00pm','Daisy','');
+  one('wed-land','wed','Land Training','land','11:30am–12:30pm','Daisy','');
+  one('wed-dance','wed','Ballet Workshop','dance','3:00–4:00pm','Lucy','');
+  one('wed-eve','wed','Nutrition Workshop','eve','8:00–9:00pm','Bianca','');
+  one('thu-land','thu','Land Training','land','11:30am–12:30pm','Gemma','');
+  one('thu-eve','thu','Coach Cards','eve','8:00–9:00pm','','');
+  one('fri-land','fri','Land Training','land','11:30am–12:30pm','Bianca','');
+  one('fri-land2','fri','Routine Land Drill','land','3:00–4:00pm','','');
+  one('fri-eve','fri','Neon Glow Goodbye Party','eve','8:00–9:00pm','','');
+
+  const schedule=buildFreshSchedule();
+  // Only the 5 named Routine coaches actually run swim sessions — Lucy, Melissa and Rebekah
+  // are exclusively dryland/dance/yoga specialists (one session each, no swim involvement).
+  // Land warm-up uses only 4 of them (Maisie sits it out); pool warm-up uses all 5.
+  generateWarmupRotation(sessions,LAND_WARMUP_COACHES,ROUTINE_ASSIGN.map(ra=>ra.coach),groups);
+  generateRoutineSchedule(sessions);
+  applyBlockOverrides(sessions);
+  return {coaches,groups,athletes,sessions,schedule,feedback:[],pin:'2026',scheduleVersion:SCHEDULE_VERSION,figureMedia:{},skillMedia:{}};
+}
+
+/* Rebuilds Mon–Fri swim sessions and the Week/Day itinerary from scratch using the CURRENT app
+   logic — fixes anyone stuck on an outdated schedule shape/labels/times/day-structure from
+   before a code update, without touching feedback, PIN, or hand-typed session plans. The only
+   swim-session content that's actually hand-typed (land warm-up notes, pool warm-up shared
+   plan) is carried over; other session plans move with their session if it changes day. */
+function migrateSwimSchedule(){
+  const landNotes={},poolPlans={},friPracticeNotes={};
+  SWIM_SESSION_ORDER.forEach(sid=>{
+    const sess=S.sessions[sid];if(!sess)return;
+    const land=sess.blocks.find(b=>b.land);
+    if(land)land.asg.forEach(a=>{ if(a.skills)landNotes[sid+'|'+a.coach+'|'+a.group]=a.skills; });
+    const pool=sess.blocks.find(b=>b.warmup);
+    if(pool&&pool.sharedPlan)poolPlans[sid]=pool.sharedPlan;
+  });
+  const friPmOld=S.sessions['fri-swim-pm'];
+  if(friPmOld){
+    const practice=friPmOld.blocks.find(b=>b.label==='Routine practice');
+    if(practice)practice.asg.forEach(a=>{ if(a.skills)friPracticeNotes[a.coach]=a.skills; });
+  }
+  const fresh=buildFreshSwimSessions();
+  SWIM_SESSION_ORDER.forEach(sid=>{ if(fresh[sid])S.sessions[sid]=fresh[sid]; });
+  // Only the 5 named Routine coaches run swim warm-ups — see ROUTINE_ASSIGN. Land warm-up
+  // uses only 4 of them (Maisie sits it out); pool warm-up uses all 5.
+  generateWarmupRotation(S.sessions,LAND_WARMUP_COACHES,ROUTINE_ASSIGN.map(ra=>ra.coach),S.groups);
+  generateRoutineSchedule(S.sessions);
+  applyBlockOverrides(S.sessions);
+  SWIM_SESSION_ORDER.forEach(sid=>{
+    const sess=S.sessions[sid];if(!sess)return;
+    const land=sess.blocks.find(b=>b.land);
+    if(land)land.asg.forEach(a=>{ const k=sid+'|'+a.coach+'|'+a.group; if(landNotes[k])a.skills=landNotes[k]; });
+    const pool=sess.blocks.find(b=>b.warmup);
+    if(pool&&poolPlans[sid])pool.sharedPlan=poolPlans[sid];
+  });
+  const friPmNew=S.sessions['fri-swim-pm'];
+  if(friPmNew){
+    const practice=friPmNew.blocks.find(b=>b.label==='Routine practice');
+    if(practice)practice.asg.forEach(a=>{ if(friPracticeNotes[a.coach])a.skills=friPracticeNotes[a.coach]; });
+  }
+  // One-time roster correction: Quentin is no longer attending camp — Romane covers his
+  // Tuesday Land Training slot instead. Only touches things if Quentin is still present, so
+  // it's a no-op for anyone who's already up to date.
+  if(S.coaches&&S.coaches.includes('Quentin')){
+    S.coaches=S.coaches.filter(c=>c!=='Quentin');
+    const tueLand=S.sessions['tue-land'];
+    if(tueLand)tueLand.blocks.forEach(b=>b.asg.forEach(a=>{ if(a.coach==='Quentin')a.coach='Romane'; }));
+  }
+  // One-time day swap: Ballet Workshop moves from Thursday to Wednesday, and the Winchester
+  // Town trip moves from Wednesday to Thursday. The session itself (coach, any typed-in plan)
+  // just moves with it — only its id/day change, so nothing about the plan content is lost.
+  if(S.sessions['thu-dance']&&!S.sessions['wed-dance']){
+    S.sessions['wed-dance']={...S.sessions['thu-dance'],id:'wed-dance',day:'wed'};
+    delete S.sessions['thu-dance'];
+  }
+  // S.schedule (the Week/Day itinerary) is fully derived, no hand-typed content lives there —
+  // safe to rebuild wholesale so the trip/workshop end up on the right days automatically.
+  S.schedule=buildFreshSchedule();
+  S.scheduleVersion=SCHEDULE_VERSION;
+}
+
+let S;
+let pendingScheduleRepush=false;
+function load(){
+  try{
+    const raw=localStorage.getItem(LS);
+    if(raw){
+      S=JSON.parse(raw);
+      if(!S.figureMedia)S.figureMedia={};
+      if(!S.skillMedia)S.skillMedia={};
+      if(S.scheduleVersion!==SCHEDULE_VERSION){
+        migrateSwimSchedule();
+        save();
+        pendingScheduleRepush=true; // push to cloud once initCloud() has a live connection
+      }
+      return;
+    }
+  }catch(e){}
+  S=seed();save();
+}
+function save(){
+  try{localStorage.setItem(LS,JSON.stringify(S));}
+  catch(e){alert('Could not save — storage may be full. Try exporting your feedback, then delete some photo feedback entries.');}
+}
+
+/* ================= APP STATE ================= */
+let me=localStorage.getItem('insynch_me')||'';
+let onlyMe=false, editMode=false;
+let isAdmin=localStorage.getItem('insynch_admin')==='1';
+function adminToggle(){
+  if(isAdmin){
+    if(confirm('Lock admin mode?')){isAdmin=false;editMode=false;localStorage.removeItem('insynch_admin');if(view==='setup')view='week';render();}
+  }else{
+    const p=prompt('Admin PIN:');
+    if(p===null)return;
+    if(p===(S.pin||'2026')){isAdmin=true;localStorage.setItem('insynch_admin','1');render();}
+    else alert('Wrong PIN.');
+  }
+}
+let view='week', curDay=defaultDay(), curSid=null, fbAthFilter='all', reportAth='all';
+let fbPrefill=null, fbPhoto=null, fbGroupFilter=null;
+let openRoster=null;
+
+function defaultDay(){
+  const today=new Date().toISOString().slice(0,10);
+  for(const k in DAYDATES){if(DAYDATES[k]===today)return k;}
+  return 'mon';
+}
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function setMe(v){me=v;localStorage.setItem('insynch_me',v);render();}
+function toggleOnlyMe(){onlyMe=!onlyMe;render();}
+function nav(v){if(v==='feedback'&&!fbPrefill)fbGroupFilter=null;view=v;if(v!=='session')curSid=null;render();window.scrollTo(0,0);}
+
+function coachInSession(sid){
+  const s=S.sessions[sid];if(!s)return false;
+  return s.blocks.some(b=>b.asg.some(a=>a.coach===me));
+}
+function sessionPlanned(sid){
+  const s=S.sessions[sid];if(!s)return false;
+  return s.blocks.some(b=>b.asg.length>0);
+}
+function sessionCoaches(sid){
+  // for week/day summaries: who's running the actual session content (skip warm-up rotation, which involves everyone)
+  const s=S.sessions[sid];if(!s)return[];
+  const set=new Set();s.blocks.forEach(b=>{if(b.land||b.warmup)return;b.asg.forEach(a=>{if(a.coach)set.add(a.coach);});});
+  return [...set];
+}
+const CAT2SC={swim:'sc-swim',land:'sc-land',dance:'sc-dance',yoga:'sc-yoga',eve:'sc-eve',gen:'sc-gen'};
+
+/* ================= RENDER CORE ================= */
+function render(){
+  // me bar
+  const meSel=document.getElementById('meSel');
+  meSel.innerHTML='<option value="">— choose your name —</option>'+S.coaches.map(c=>`<option ${c===me?'selected':''}>${esc(c)}</option>`).join('');
+  const omb=document.getElementById('onlyMeBtn');
+  omb.className='pill-toggle'+(onlyMe?' on':'');
+  omb.style.display=me?'':'none';
+  const ab=document.getElementById('adminBtn');
+  ab.textContent=isAdmin?'🔓 Admin':'🔒';
+  ab.className='pill-toggle'+(isAdmin?' on':'');
+  document.getElementById('syncDot').textContent=cloudOn?(cloudReady?'● online sync':'○ connecting…'):'local only';
+  // tabs
+  const T=[['week','Week'],['day','Day'],['feedback','Feedback'],['reports','Reports']];
+  if(isAdmin)T.push(['setup','Setup']);
+  document.getElementById('tabs').innerHTML=T.map(([v,l])=>`<button class="${(view===v||(view==='session'&&v==='day'))?'on':''}" onclick="nav('${v}')">${l}</button>`).join('');
+  const app=document.getElementById('app');
+  if(view==='week')app.innerHTML=rWeek();
+  else if(view==='day')app.innerHTML=rDay();
+  else if(view==='session')app.innerHTML=rSession();
+  else if(view==='feedback'){app.innerHTML=rFeedback();}
+  else if(view==='reports'){app.innerHTML=rReports();buildPrint();}
+  else if(view==='setup')app.innerHTML=rSetup();
+}
+
+/* ================= WEEK VIEW ================= */
+function rWeek(){
+  let h='<div class="topbar"><h2>Full Week</h2><div class="sub">Sun 26 July, 4pm → Sat 1 Aug, 11am</div></div>';
+  if(onlyMe&&me)h+=`<div class="note">Showing sessions involving <b>${esc(me)}</b>. Sessions with no plan yet are still shown.</div>`;
+  DAYS.forEach(d=>{
+    const items=S.schedule[d.k]||[];
+    let chips='';
+    items.forEach(it=>{
+      if(!it)return;
+      if(it.sid){
+        if(onlyMe&&me&&sessionPlanned(it.sid)&&!coachInSession(it.sid))return;
+        const cs=sessionCoaches(it.sid);
+        chips+=`<button class="sess-chip ${CAT2SC[it.cat]||'sc-gen'}" onclick="openSession('${it.sid}')">${esc(S.sessions[it.sid].title)}<small>${esc(it.t)}${cs.length?' · '+cs.map(esc).join(', '):''}</small></button>`;
+      }else if(['gen'].includes(it.cat)&&/arrive|Depart|Welcome|Goodbye|Trip/i.test(it.ti)){
+        chips+=`<button class="sess-chip sc-gen" onclick="openDay('${d.k}')">${esc(it.ti)}<small>${esc(it.t)}</small></button>`;
+      }
+    });
+    h+=`<div class="wkday"><div class="wkhead" onclick="openDay('${d.k}')"><b>${d.n} ${d.dd}</b><span>tap for full day →</span></div><div class="wkbody">${chips||'<span style="font-size:.8rem;color:var(--muted)">No sessions</span>'}</div></div>`;
+  });
+  return h;
+}
+function openDay(k){curDay=k;nav('day');}
+function openSession(sid){curSid=sid;view='session';poolPlanEdit=false;landEditFor=null;asgForm=null;render();window.scrollTo(0,0);}
+
+/* ================= DAY VIEW ================= */
+function dayChips(){
+  return '<div class="daychips">'+DAYS.map(d=>`<button class="${curDay===d.k?'on':''}" onclick="openDay('${d.k}')">${d.n.slice(0,3)}<span class="d">${d.dd}</span></button>`).join('')+'</div>';
+}
+function rDay(){
+  const items=S.schedule[curDay]||[];
+  let h=dayChips();
+  h+=`<div class="topbar"><h2>${dayLabel(curDay)}</h2></div>`;
+  items.forEach(it=>{
+    if(!it)return;
+    let hide=false;
+    if(it.sid&&onlyMe&&me&&sessionPlanned(it.sid)&&!coachInSession(it.sid))hide=true;
+    if(hide)return;
+    const cs=it.sid?sessionCoaches(it.sid):[];
+    const sub=cs.length?`<small>Coaches: ${cs.map(esc).join(', ')}</small>`:'';
+    if(it.sid){
+      h+=`<div class="tl-item clickable cat-${it.cat}" onclick="openSession('${it.sid}')"><div class="tm">${esc(it.t)}</div><div class="ti">${esc(it.ti)}${sub}</div><div class="chev">›</div></div>`;
+    }else{
+      h+=`<div class="tl-item cat-${it.cat}"><div class="tm">${esc(it.t)}</div><div class="ti">${esc(it.ti)}</div></div>`;
+    }
+  });
+  return h;
+}
+
+/* ================= SESSION VIEW ================= */
+function rSession(){
+  const s=S.sessions[curSid];
+  if(!s)return '<p>Session not found.</p>';
+  let h=`<div class="topbar"><div><h2>${esc(s.title)}</h2><div class="sub">${dayLabel(s.day)} · ${esc(s.time)}</div></div>
+  <div style="display:flex;gap:6px">
+    <button class="btn sec sm" onclick="openDay('${s.day}')">‹ Back</button>
+    ${isAdmin?`<button class="btn sm ${editMode?'':'sec'}" onclick="editMode=!editMode;render()">${editMode?'Done editing':'Edit plan'}</button>`:''}
+  </div></div>`;
+  if(s.type==='swim'){
+    if(s.id==='fri-swim-pm')h+='<div class="note">Friday afternoon has its own structure: land + pool warm-up as usual, then each Routine coach gets a fixed 30 min alone with their own home group (no rotating through other coaches today), then performances, then free time for photos.</div>';
+    else h+='<div class="note">Land warm-up (15 min, each coach\'s own choice) then pool warm-up (30 min, one shared plan) — see above. After that: 30 min Routine with your home group (Maisie–Lavender, Bianca–Iris, Daisy–Violet, Gemma–Amethyst, Romane–Lilac), staggered so at most 2 coaches share the speaker at once, then the remaining 60 minutes rotates each group through all 4 of the other coaches, one 15-min visit each.</div>';
+  }
+  if(onlyMe&&me)h+=`<div class="note">Showing only <b>${esc(me)}</b>'s assignments. Turn off "Just my sessions" to see everyone.</div>`;
+  s.blocks.forEach((b,bi)=>{
+    if(b.land){h+=rLandBlock(s,b,bi);return;}
+    if(b.warmup){h+=rPoolWarmBlock(s,b,bi);return;}
+    const label=(b.label?b.label+' · ':'')+b.t;
+    h+=`<div class="block"><div class="bh"><span>${esc(label)}</span>${editMode?`<button class="add" onclick="showAsgForm('${s.id}',${bi},null)">+ Add</button>`:''}</div>`;
+    let shown=0;
+    b.asg.forEach(a=>{
+      if(onlyMe&&me&&a.coach&&a.coach!==me)return;
+      shown++;
+      const col=ACTS[a.activity]||'var(--silver)';
+      const hasGroup=a.group&&a.group!=='All groups';
+      const groupHtml=hasGroup?`<span class="grouplink" onclick="toggleRoster('${esc(a.group)}')">${esc(a.group)} ${openRoster===a.group?'▲':'▾'}</span>`:esc(a.group||'All groups');
+      const skillsHtml=a.activity==='Routine'?'':(a.skills?`<div class="sk">${esc(a.skills)}</div>`:'<div class="sk"><i style="color:var(--silver)">No skills listed yet</i></div>');
+      h+=`<div class="asg${a.coach===me?' mine':''}">
+        <span class="act" style="background:${col}">${esc(a.activity||'Plan')}</span>
+        <div class="body">
+          <div class="who">${esc(a.coach||'Any coach')} · ${groupHtml}</div>
+          ${hasGroup&&openRoster===a.group?athleteRosterHtml(a.group):''}
+          ${skillsHtml}
+          ${a.notes?`<div class="nt">${esc(a.notes)}</div>`:''}
+          ${skillFigureMediaHtml(s.id,a)}
+          ${mediaDisplayHtml(a)}
+        </div>
+        <div class="ops">
+          <button class="fb" onclick="quickFb('${s.id}','${a.id}')">Feedback</button>
+          ${editMode?`<button onclick="showAsgForm('${s.id}',${bi},'${a.id}')">Edit</button><button onclick="delAsg('${s.id}',${bi},'${a.id}')" style="color:#DC2626">✕</button>`:''}
+        </div>
+      </div>`;
+    });
+    if(shown===0)h+=`<div class="empty">${onlyMe&&me&&b.asg.length?'Nothing for you in this block':'Nothing planned yet'}</div>`;
+    if(asgForm&&asgForm.sid===s.id&&asgForm.bi===bi)h+=rAsgForm(s,b);
+    h+='</div>';
+  });
+  return h;
+}
+
+/* ---- Group roster (click a group name to see who's in it) ---- */
+function toggleRoster(g){openRoster=openRoster===g?null:g;render();}
+function athleteRosterHtml(g){
+  const list=S.athletes.filter(a=>a.g===g).map(a=>a.n).sort();
+  return `<div class="roster">${list.length?esc(list.join(', ')):'No athletes added to this group yet.'}</div>`;
+}
+
+/* ---- Images/links attached to a plan item (assignment or shared pool plan) ---- */
+function mediaDisplayHtml(obj){
+  const images=obj.images||[], links=obj.links||[];
+  if(!images.length&&!links.length)return '';
+  let h='<div class="medialist">';
+  images.forEach(im=>{h+=`<a href="${im.data}" target="_blank" rel="noopener"><img src="${im.data}"></a>`;});
+  links.forEach(l=>{h+=`<a class="linkchip" href="${esc(l.url)}" target="_blank" rel="noopener">🔗 ${esc(l.label||l.url)}</a>`;});
+  h+='</div>';
+  return h;
+}
+function mediaEditHtml(obj,prefix){
+  const images=obj.images||[], links=obj.links||[];
+  let h='<div class="medialist">';
+  images.forEach(im=>{h+=`<div class="thumb"><img src="${im.data}"><button onclick="${prefix}RemoveImage('${im.id}')">✕</button></div>`;});
+  links.forEach(l=>{h+=`<span class="linkchip">🔗 ${esc(l.label||l.url)}<button onclick="${prefix}RemoveLink('${l.id}')">✕</button></span>`;});
+  h+='</div>';
+  h+=`<div class="mediaadd">
+    <label class="btn sec sm" style="cursor:pointer">+ Image<input type="file" accept="image/*" style="display:none" onchange="${prefix}AddImage(this)"></label>
+    <input type="text" id="${prefix}_link_url" placeholder="Link URL (https://…)">
+    <input type="text" id="${prefix}_link_label" placeholder="Link label (optional)">
+    <button class="btn sec sm" onclick="${prefix}AddLink()">+ Link</button>
+  </div>`;
+  return h;
+}
+function readImageCompressed(file,cb){
+  const rd=new FileReader();
+  rd.onload=e=>{
+    const img=new Image();
+    img.onload=()=>{
+      const max=800;let w=img.width,hh=img.height;
+      if(w>max||hh>max){const r=Math.min(max/w,max/hh);w=Math.round(w*r);hh=Math.round(hh*r);}
+      const c=document.createElement('canvas');c.width=w;c.height=hh;
+      c.getContext('2d').drawImage(img,0,0,w,hh);
+      cb(c.toDataURL('image/jpeg',0.7));
+    };
+    img.src=e.target.result;
+  };
+  rd.readAsDataURL(file);
+}
+
+/* ---- Land warm-up block: 15 min, each coach's own choice ---- */
+function rLandBlock(s,b,bi){
+  let h=`<div class="block land"><div class="bh"><span>${esc(b.label+' · '+b.t)}</span>${editMode?`<button class="add" onclick="showAsgForm('${s.id}',${bi},null)">+ Add</button>`:''}</div>`;
+  h+='<div class="note" style="margin:0;border-radius:0">Up to each coach — jot down what you\'ll do with your group.</div>';
+  h+=rAttendance(s,b,bi);
+  let shown=0;
+  sortByLane(b.asg).forEach(a=>{
+    if(onlyMe&&me&&a.coach&&a.coach!==me)return;
+    shown++;
+    const editingThis=landEditFor&&landEditFor.sid===s.id&&landEditFor.bi===bi&&landEditFor.aid===a.id;
+    h+=`<div class="asg${a.coach===me?' mine':''}">
+      <span class="act" style="background:var(--warmup)">Land</span>
+      <div class="body">
+        <div class="who">${esc(a.coach||'Unassigned')} · ${esc(a.group||'—')}</div>
+        ${editingThis||!a.skills?'':`<div class="sk">${esc(a.skills)}</div>`}
+      </div>
+      <div class="ops">
+        ${a.coach===me&&!editingThis?`<button onclick="landEditFor={sid:'${s.id}',bi:${bi},aid:'${a.id}'};render()">${a.skills?'Edit my plan':'Add my plan'}</button>`:''}
+        ${editMode?`<button onclick="showAsgForm('${s.id}',${bi},'${a.id}')">Reassign</button><button onclick="delAsg('${s.id}',${bi},'${a.id}')" style="color:#DC2626">✕</button>`:''}
+      </div>
+    </div>`;
+    if(editingThis){
+      h+=`<div class="editform">
+        <textarea id="land_txt" rows="2" placeholder="What will you do for your 15-min land warm-up?">${esc(a.skills)}</textarea>
+        <div class="row"><button class="btn sm" onclick="saveLandPlan()">Save</button><button class="btn sec sm" onclick="landEditFor=null;render()">Cancel</button></div>
+      </div>`;
+    }
+  });
+  if(shown===0)h+='<div class="empty">Nothing planned yet</div>';
+  if(asgForm&&asgForm.sid===s.id&&asgForm.bi===bi)h+=rAsgForm(s,b);
+  h+='</div>';
+  return h;
+}
+let landEditFor=null;
+function saveLandPlan(){
+  const {sid,bi,aid}=landEditFor;
+  const a=S.sessions[sid].blocks[bi].asg.find(x=>x.id===aid);
+  if(a)a.skills=document.getElementById('land_txt').value.trim();
+  landEditFor=null;save();pushSession(sid);render();
+}
+
+/* ---- Attendance: tick athletes in as they arrive at land warm-up; Late auto-logs feedback ---- */
+function rAttendance(s,b,bi){
+  const present=new Set(b.asg.filter(a=>!(onlyMe&&me&&a.coach&&a.coach!==me)).map(a=>a.group).filter(g=>g&&g!=='All groups'));
+  const groups=LANE_ORDER.filter(g=>present.has(g));
+  if(!groups.length)return '';
+  if(!b.attendance)b.attendance={};
+  let h='<div class="attendance"><div style="font-size:.78rem;font-weight:700;color:var(--muted);margin-bottom:4px">Attendance</div>';
+  groups.forEach(g=>{
+    const coachEntry=b.asg.find(a=>a.group===g);
+    h+=`<div style="margin-bottom:6px"><div style="font-size:.78rem;font-weight:700;color:var(--purple-dark);margin-bottom:2px">${esc(g)}${coachEntry&&coachEntry.coach?' — '+esc(coachEntry.coach):''}</div>`;
+    S.athletes.filter(a=>a.g===g).forEach(ath=>{
+      const rec=b.attendance[ath.n];
+      const st=rec&&rec.status;
+      h+=`<div class="attrow"><span>${esc(ath.n)}</span><span class="attbtns">
+        <button class="${st==='present'?'on':''}" onclick="markAttendance('${s.id}',${bi},'${esc(ath.n)}','present')">✓ Here</button>
+        <button class="${st==='late'?'on late':''}" onclick="markAttendance('${s.id}',${bi},'${esc(ath.n)}','late')">Late</button>
+      </span></div>`;
+    });
+    h+='</div>';
+  });
+  h+='</div>';
+  return h;
+}
+function markAttendance(sid,bi,athleteName,status){
+  const b=S.sessions[sid].blocks[bi], s=S.sessions[sid];
+  if(!b.attendance)b.attendance={};
+  const cur=b.attendance[athleteName];
+  if(cur&&cur.fbId){ S.feedback=S.feedback.filter(f=>f.id!==cur.fbId); removeFeedback(cur.fbId); }
+  if(cur&&cur.status===status){
+    delete b.attendance[athleteName];
+  }else{
+    let fbId=null;
+    if(status==='late'){
+      const entry={id:uid(),athlete:athleteName,coach:me||'Coach',day:s.day,session:s.title,skills:'Land warm-up attendance',text:'Athlete arrived late to Land Warm Up',photo:null,ts:Date.now()};
+      S.feedback.push(entry);pushFeedback(entry);
+      fbId=entry.id;
+    }
+    b.attendance[athleteName]={status,fbId};
+  }
+  save();pushSession(sid);render();
+}
+
+/* ---- Pool warm-up block: 30 min, one shared plan for everyone ---- */
+function rPoolWarmBlock(s,b,bi){
+  let h=`<div class="block warm"><div class="bh"><span>${esc(b.label+' · '+b.t)}</span>${isAdmin&&!poolPlanEdit?`<button class="add" onclick="poolPlanEdit=true;poolPlanDraftText=null;poolPlanDraft={images:[...(b.images||[])],links:[...(b.links||[])]};render()">Edit plan</button>`:''}</div>`;
+  if(poolPlanEdit){
+    h+=`<div class="editform">
+      <textarea id="pool_plan_txt" rows="5" placeholder="Detailed warm-up plan for everyone (same for all groups/coaches this session)…">${esc(poolPlanDraftText!==null?poolPlanDraftText:(b.sharedPlan||''))}</textarea>
+      ${mediaEditHtml(poolPlanDraft,'pp')}
+      <div class="row"><button class="btn sm" onclick="savePoolPlan('${s.id}',${bi})">Save plan</button><button class="btn sec sm" onclick="poolPlanEdit=false;poolPlanDraft=null;render()">Cancel</button></div>
+    </div>`;
+  }else{
+    h+=`<div style="padding:10px;font-size:.9rem;white-space:pre-wrap">${b.sharedPlan?esc(b.sharedPlan):'<i style="color:var(--silver)">No warm-up plan added yet.</i>'}${mediaDisplayHtml(b)}</div>`;
+  }
+  h+='<div style="padding:0 10px 4px;font-size:.78rem;font-weight:700;color:var(--muted)">Who\'s leading which group (fixed lanes, same every day):</div>';
+  let shown=0;
+  sortByLane(b.asg).forEach(a=>{
+    if(onlyMe&&me&&a.coach&&a.coach!==me)return;
+    shown++;
+    const hasGroup=a.group&&a.group!=='All groups';
+    const laneTag=hasGroup&&LANE_NUMBER[a.group]?`<span style="color:var(--muted);font-weight:600">Lane ${LANE_NUMBER[a.group]} · </span>`:'';
+    const groupHtml=hasGroup?`<span class="grouplink" onclick="toggleRoster('${esc(a.group)}')">${esc(a.group)} ${openRoster===a.group?'▲':'▾'}</span>`:esc(a.group||'—');
+    h+=`<div class="asg${a.coach===me?' mine':''}">
+      <div class="body"><div class="who">${laneTag}${esc(a.coach||'Unassigned')} · ${groupHtml}</div>${hasGroup&&openRoster===a.group?athleteRosterHtml(a.group):''}</div>
+      <div class="ops">
+        <button class="fb" onclick="quickFb('${s.id}','${a.id}')">Feedback</button>
+        ${editMode?`<button onclick="showAsgForm('${s.id}',${bi},'${a.id}')">Reassign</button><button onclick="delAsg('${s.id}',${bi},'${a.id}')" style="color:#DC2626">✕</button>`:''}
+      </div>
+    </div>`;
+  });
+  if(shown===0)h+='<div class="empty">Nothing planned yet</div>';
+  if(editMode)h+=`<div style="padding:8px 10px"><button class="add" onclick="showAsgForm('${s.id}',${bi},null)">+ Add coach/group</button></div>`;
+  if(asgForm&&asgForm.sid===s.id&&asgForm.bi===bi)h+=rAsgForm(s,b);
+  h+='</div>';
+  return h;
+}
+let poolPlanEdit=false, poolPlanDraft=null;
+function ppCommitPendingLink(){
+  const urlEl=document.getElementById('pp_link_url');
+  if(!urlEl)return;
+  const url=urlEl.value.trim();
+  if(!url)return;
+  const labelEl=document.getElementById('pp_link_label');
+  const label=labelEl?labelEl.value.trim():'';
+  poolPlanDraft.links.push({id:uid(),url,label:label||url});
+}
+function savePoolPlan(sid,bi){
+  const b=S.sessions[sid].blocks[bi];
+  if(poolPlanDraft)ppCommitPendingLink();
+  b.sharedPlan=document.getElementById('pool_plan_txt').value.trim();
+  b.images=poolPlanDraft?poolPlanDraft.images:(b.images||[]);
+  b.links=poolPlanDraft?poolPlanDraft.links:(b.links||[]);
+  poolPlanEdit=false;poolPlanDraft=null;poolPlanDraftText=null;save();pushSession(sid);render();
+}
+function ppSyncFields(){ if(document.getElementById('pool_plan_txt'))poolPlanDraftText=document.getElementById('pool_plan_txt').value; }
+let poolPlanDraftText=null;
+function ppAddImage(inp){
+  const file=inp.files&&inp.files[0]; if(!file)return;
+  ppSyncFields();
+  readImageCompressed(file,data=>{ poolPlanDraft.images.push({id:uid(),data}); render(); });
+}
+function ppRemoveImage(id){ ppSyncFields(); poolPlanDraft.images=poolPlanDraft.images.filter(im=>im.id!==id); render(); }
+function ppAddLink(){
+  const url=document.getElementById('pp_link_url').value.trim(); if(!url)return;
+  const label=document.getElementById('pp_link_label').value.trim();
+  ppSyncFields();
+  poolPlanDraft.links.push({id:uid(),url,label:label||url}); render();
+}
+function ppRemoveLink(id){ ppSyncFields(); poolPlanDraft.links=poolPlanDraft.links.filter(l=>l.id!==id); render(); }
+let asgForm=null;
+function showAsgForm(sid,bi,aid){
+  const s=S.sessions[sid];
+  let a={id:null,coach:me||'',activity:s.type==='swim'?'Skill':'',skills:'',group:'All groups',notes:'',images:[],links:[]};
+  if(aid){const f=s.blocks[bi].asg.find(x=>x.id===aid);if(f)a={images:[],links:[],...f};}
+  asgForm={sid,bi,aid,a};
+  render();
+}
+function syncAsgFormFields(){
+  if(!asgForm)return;
+  const c=document.getElementById('af_coach'),act=document.getElementById('af_act'),g=document.getElementById('af_group'),
+    sk=document.getElementById('af_skills'),nt=document.getElementById('af_notes');
+  if(c)asgForm.a.coach=c.value;
+  if(act)asgForm.a.activity=act.value;
+  if(g)asgForm.a.group=g.value;
+  if(sk)asgForm.a.skills=sk.value;
+  if(nt)asgForm.a.notes=nt.value;
+}
+function afAddImage(inp){
+  const file=inp.files&&inp.files[0]; if(!file)return;
+  syncAsgFormFields();
+  readImageCompressed(file,data=>{ asgForm.a.images.push({id:uid(),data}); render(); });
+}
+function afRemoveImage(id){ syncAsgFormFields(); asgForm.a.images=asgForm.a.images.filter(im=>im.id!==id); render(); }
+function afAddLink(){
+  const url=document.getElementById('af_link_url').value.trim(); if(!url)return;
+  const label=document.getElementById('af_link_label').value.trim();
+  syncAsgFormFields();
+  asgForm.a.links.push({id:uid(),url,label:label||url}); render();
+}
+function afRemoveLink(id){ syncAsgFormFields(); asgForm.a.links=asgForm.a.links.filter(l=>l.id!==id); render(); }
+function rAsgForm(s,b){
+  const a=asgForm.a;
+  const actOpts=['','Warm up','Routine','Skill','Figure','Acro'].map(x=>`<option ${a.activity===x?'selected':''} value="${x}">${x||'— activity —'}</option>`).join('');
+  const cOpts=['',...S.coaches].map(c=>`<option ${a.coach===c?'selected':''} value="${esc(c)}">${esc(c)||'— coach —'}</option>`).join('');
+  const gOpts=['All groups',...S.groups].map(g=>`<option ${a.group===g?'selected':''} value="${esc(g)}">${esc(g)}</option>`).join('');
+  return `<div class="editform">
+    <div class="row">
+      <select id="af_coach">${cOpts}</select>
+      <select id="af_act">${actOpts}</select>
+      <select id="af_group">${gOpts}</select>
+    </div>
+    <textarea id="af_skills" rows="3" placeholder="Skills to cover (e.g. Barracuda, eggbeater height, hybrid counts 1–8)">${esc(a.skills)}</textarea>
+    <input type="text" id="af_notes" placeholder="Notes (optional)" value="${esc(a.notes)}">
+    ${mediaEditHtml(a,'af')}
+    <div class="row">
+      <button class="btn sm" onclick="saveAsg()">Save</button>
+      <button class="btn sec sm" onclick="asgForm=null;render()">Cancel</button>
+    </div>
+  </div>`;
+}
+function afCommitPendingLink(){
+  const urlEl=document.getElementById('af_link_url');
+  if(!urlEl)return;
+  const url=urlEl.value.trim();
+  if(!url)return;
+  const labelEl=document.getElementById('af_link_label');
+  const label=labelEl?labelEl.value.trim():'';
+  asgForm.a.links.push({id:uid(),url,label:label||url});
+}
+function saveAsg(){
+  const {sid,bi,aid}=asgForm;
+  const s=S.sessions[sid];
+  afCommitPendingLink();
+  const vals={coach:document.getElementById('af_coach').value,activity:document.getElementById('af_act').value,
+    group:document.getElementById('af_group').value,skills:document.getElementById('af_skills').value.trim(),notes:document.getElementById('af_notes').value.trim(),
+    images:asgForm.a.images||[],links:asgForm.a.links||[]};
+  if(aid){const f=s.blocks[bi].asg.find(x=>x.id===aid);Object.assign(f,vals);}
+  else s.blocks[bi].asg.push({id:uid(),...vals});
+  asgForm=null;save();pushSession(sid);render();
+}
+function delAsg(sid,bi,aid){
+  if(!confirm('Delete this plan item?'))return;
+  const b=S.sessions[sid].blocks[bi];
+  b.asg=b.asg.filter(x=>x.id!==aid);
+  save();pushSession(sid);render();
+}
+function quickFb(sid,aid){
+  const s=S.sessions[sid];
+  let skills='',group='';
+  s.blocks.forEach(b=>b.asg.forEach(a=>{
+    if(a.id!==aid)return;
+    group=a.group||'';
+    if(b.warmup)skills='Pool warm-up'+(b.sharedPlan?': '+b.sharedPlan:'');
+    else if(b.land)skills='Land warm-up'+(a.skills?': '+a.skills:'');
+    else skills=(a.activity?a.activity+': ':'')+a.skills;
+  }));
+  fbPrefill={day:s.day,session:s.title,skills:skills,group:(group&&group!=='All groups')?group:null};
+  nav('feedback');
+}
+
+/* ================= FEEDBACK ================= */
+const SESSION_NAMES=['Swim Training (AM)','Swim Training (PM)','Land Training','Jazz Workshop','Ballet Workshop','Yoga','Routine Land Drill','Evening Activity','Other'];
+function rFeedback(){
+  const pf=fbPrefill||{};fbPrefill=null;
+  if('group' in pf)fbGroupFilter=pf.group;
+  const day=pf.day||curDay;
+  let h='<div class="topbar"><h2>Give Feedback</h2></div>';
+  if(!me)h+='<div class="note">⚠️ Choose your name at the top first — feedback is saved under your name.</div>';
+  const athOpts=fbGroupFilter
+    ?'<option value="">— choose athlete —</option>'+S.athletes.filter(a=>a.g===fbGroupFilter).map(a=>`<option value="${esc(a.n)}">${esc(a.n)}</option>`).join('')
+    :'<option value="">— choose athlete —</option>'+S.groups.map(g=>`<optgroup label="${esc(g)}">`+S.athletes.filter(a=>a.g===g).map(a=>`<option value="${esc(a.n)}">${esc(a.n)}</option>`).join('')+'</optgroup>').join('');
+  const dayOpts=DAYS.map(d=>`<option value="${d.k}" ${d.k===day?'selected':''}>${d.n} ${d.dd}</option>`).join('');
+  const sessOpts=SESSION_NAMES.map(s=>`<option ${pf.session===s?'selected':''}>${esc(s)}</option>`).join('');
+  h+=`<div class="card"><div class="fbform">
+    ${fbGroupFilter?`<div class="note">Showing only <b>${esc(fbGroupFilter)}</b> athletes since you tapped Feedback from that group's plan. <span class="grouplink" onclick="fbGroupFilter=null;render()">Show everyone instead</span></div>`:''}
+    <div class="frow"><label>Athlete</label><select id="fb_ath">${athOpts}</select></div>
+    <div class="frow"><label>Day</label><select id="fb_day">${dayOpts}</select></div>
+    <div class="frow"><label>Session</label><select id="fb_sess">${sessOpts}</select></div>
+    <div class="frow"><label>Skills worked on</label><input type="text" id="fb_skills" placeholder="e.g. Figure: Barracuda — leg alignment" value="${esc(pf.skills||'')}"></div>
+    <div class="frow"><label>Feedback</label><textarea id="fb_txt" rows="3" placeholder="Type your feedback… (or just attach a photo)"></textarea></div>
+    <div class="frow"><label>Photo (optional)</label>
+      <input type="file" id="fb_photo" accept="image/*" capture="environment" onchange="handlePhoto(this)">
+      <img id="fb_prev" class="photo-prev" style="display:none">
+    </div>
+    <button class="btn" onclick="saveFb()">Save feedback</button>
+  </div></div>`;
+  // list
+  const mine=S.feedback;
+  h+=`<div class="topbar" style="margin-top:16px"><h2>Feedback on this device (${mine.length})</h2></div>`;
+  h+='<div class="athchips"><button class="'+(fbAthFilter==='all'?'on':'')+'" onclick="fbAthFilter=\'all\';render()">All</button>'+
+    [...new Set(mine.map(f=>f.athlete))].sort().map(a=>`<button class="${fbAthFilter===a?'on':''}" onclick="fbAthFilter='${esc(a)}';render()">${esc(a)}</button>`).join('')+'</div>';
+  const list=mine.filter(f=>fbAthFilter==='all'||f.athlete===fbAthFilter)
+    .slice().sort((a,b)=>(DAYS.findIndex(d=>d.k===a.day)-DAYS.findIndex(d=>d.k===b.day))||(a.ts-b.ts));
+  if(!list.length)h+='<p style="color:var(--muted);font-size:.9rem">No feedback yet.</p>';
+  list.forEach(f=>{
+    h+=`<div class="fbcard">
+      <div class="meta"><b>${esc(f.athlete)}</b><span>${dayLabel(f.day)}</span><span>${esc(f.session)}</span><span>Coach ${esc(f.coach)}</span></div>
+      ${f.skills?`<div class="skills">${esc(f.skills)}</div>`:''}
+      ${f.text?`<div class="txt">${esc(f.text)}</div>`:''}
+      ${f.photo?`<img src="${f.photo}">`:''}
+      <div style="margin-top:6px"><button class="btn danger sm" onclick="delFb('${f.id}')">Delete</button></div>
+    </div>`;
+  });
+  return h;
+}
+function handlePhoto(inp){
+  const file=inp.files&&inp.files[0];
+  if(!file){fbPhoto=null;return;}
+  const rd=new FileReader();
+  rd.onload=e=>{
+    const img=new Image();
+    img.onload=()=>{
+      const max=900;let w=img.width,hh=img.height;
+      if(w>max||hh>max){const r=Math.min(max/w,max/hh);w=Math.round(w*r);hh=Math.round(hh*r);}
+      const c=document.createElement('canvas');c.width=w;c.height=hh;
+      c.getContext('2d').drawImage(img,0,0,w,hh);
+      fbPhoto=c.toDataURL('image/jpeg',0.7);
+      const pv=document.getElementById('fb_prev');pv.src=fbPhoto;pv.style.display='block';
+    };
+    img.src=e.target.result;
+  };
+  rd.readAsDataURL(file);
+}
+function saveFb(){
+  if(!me){alert('Choose your name at the top first.');return;}
+  const ath=document.getElementById('fb_ath').value;
+  if(!ath){alert('Choose an athlete.');return;}
+  const txt=document.getElementById('fb_txt').value.trim();
+  if(!txt&&!fbPhoto){alert('Type some feedback or attach a photo.');return;}
+  const entry={id:uid(),athlete:ath,coach:me,day:document.getElementById('fb_day').value,
+    session:document.getElementById('fb_sess').value,skills:document.getElementById('fb_skills').value.trim(),
+    text:txt,photo:fbPhoto,ts:Date.now()};
+  S.feedback.push(entry);
+  fbPhoto=null;save();pushFeedback(entry);render();window.scrollTo(0,0);
+}
+function delFb(id){
+  if(!confirm('Delete this feedback?'))return;
+  S.feedback=S.feedback.filter(f=>f.id!==id);save();removeFeedback(id);render();
+}
+
+/* ================= REPORTS ================= */
+function rReports(){
+  let h='<div class="topbar"><h2>End-of-Camp Reports</h2></div>';
+  h+=`<div class="note">Import every coach's feedback file first (Setup tab), then print. Each athlete starts on a new page.</div>
+  <div class="card"><div class="row" style="display:flex;gap:8px;flex-wrap:wrap">
+    <select id="rep_ath" onchange="reportAth=this.value;render()">
+      <option value="all" ${reportAth==='all'?'selected':''}>All athletes (one page each)</option>
+      ${S.athletes.map(a=>`<option value="${esc(a.n)}" ${reportAth===a.n?'selected':''}>${esc(a.n)} — ${esc(a.g)}</option>`).join('')}
+    </select>
+    <button class="btn" onclick="window.print()">🖨 Print</button>
+  </div></div>`;
+  h+=reportsHtml(false);
+  return h;
+}
+function reportsHtml(forPrint){
+  const aths=reportAth==='all'?S.athletes:S.athletes.filter(a=>a.n===reportAth);
+  let h='';
+  aths.forEach(a=>{
+    const fbs=S.feedback.filter(f=>f.athlete===a.n)
+      .sort((x,y)=>(DAYS.findIndex(d=>d.k===x.day)-DAYS.findIndex(d=>d.k===y.day))||(x.ts-y.ts));
+    h+=`<div class="report">
+      <h2>${esc(a.n)}</h2>
+      <div class="rgroup">${esc(a.g)} · In Synch Summer Camp 2026 · Winchester · 26 July – 1 August</div>`;
+    if(!fbs.length)h+='<p style="color:var(--muted);font-size:.9rem">No feedback recorded.</p>';
+    fbs.forEach(f=>{
+      h+=`<div class="rentry">
+        <div class="rmeta"><b>${dayLabel(f.day)}</b> · ${esc(f.session)} · Coach ${esc(f.coach)}</div>
+        ${f.skills?`<div class="rskills">Skills: ${esc(f.skills)}</div>`:''}
+        ${f.text?`<div class="rtxt">${esc(f.text)}</div>`:''}
+        ${f.photo?`<img src="${f.photo}">`:''}
+      </div>`;
+    });
+    h+='</div>';
+  });
+  return h;
+}
+function buildPrint(){document.getElementById('printArea').innerHTML=reportsHtml(true);}
+
+function warmupRotationSummary(){
+  const dayLabel={mon:'Mon',tue:'Tue',wed:'Wed',thu:'Thu',fri:'Fri'};
+  return SWIM_SESSION_ORDER.map(sid=>{
+    const sess=S.sessions[sid];
+    if(!sess)return '';
+    const land=sess.blocks.find(b=>b.land);
+    const pool=sess.blocks.find(b=>b.warmup);
+    if((!land||!land.asg.length)&&(!pool||!pool.asg.length))return '';
+    const landPairs=land&&land.asg.length?sortByLane(land.asg).map(a=>`${esc(a.coach||'Unassigned')}→${esc((a.group||'—').replace('Team ',''))}`).join(', '):'—';
+    const poolPairs=pool&&pool.asg.length?sortByLane(pool.asg).map(a=>`Lane ${LANE_NUMBER[a.group]||'?'} ${esc((a.group||'—').replace('Team ',''))}: ${esc(a.coach||'Unassigned')}`).join(', '):'—';
+    const label=(dayLabel[sess.day]||sess.day)+' '+(sid.includes('-am')?'AM':'PM');
+    return `<div style="margin-bottom:8px;font-size:.82rem"><b>${esc(label)}</b><br><span style="color:var(--muted)">Land:</span> ${landPairs}<br><span style="color:var(--muted)">Pool:</span> ${poolPairs}</div>`;
+  }).join('');
+}
+function fridayAmHomeSkillCatchupSummary(){
+  const sess=S.sessions['fri-swim-am'];
+  if(!sess)return '';
+  const qb=sess.blocks.filter(b=>!b.land&&!b.warmup);
+  return ROUTINE_ASSIGN.map(ra=>{
+    const found=[];
+    qb.forEach(b=>b.asg.forEach(a=>{
+      if(a.group===ra.group&&a.skills&&a.skills.indexOf('own Routine coach')!==-1){
+        found.push(a.skills.split(' — own Routine')[0]);
+      }
+    }));
+    if(!found.length) return `<b>${esc(ra.group.replace('Team ',''))}</b>: not yet placed — tap "Regenerate Routine schedule" below`;
+    return `<b>${esc(ra.group.replace('Team ',''))}</b>: gets all ${found.length} of ${esc(ra.coach)}'s topics on Friday AM (${found.map(esc).join('; ')})`;
+  }).join('<br>');
+}
+const PM_FIGURE_SESSIONS=[{sid:'mon-swim-pm',label:'Mon'},{sid:'tue-swim-pm',label:'Tue'},{sid:'wed-swim-pm',label:'Wed'},{sid:'thu-swim-pm',label:'Thu'}];
+function pmCoverageSummary(sid){
+  const sess=S.sessions[sid];
+  if(!sess)return '';
+  const qb=sess.blocks.filter(b=>!b.land&&!b.warmup);
+  const perGroup={};
+  S.groups.forEach(g=>perGroup[g]={acro:[],figures:new Set()});
+  qb.forEach(b=>b.asg.forEach(a=>{
+    if(!perGroup[a.group])return;
+    if(a.activity==='Acro')perGroup[a.group].acro.push(a.coach);
+    else if(a.activity==='Figure')perGroup[a.group].figures.add(a.skills);
+  }));
+  return sortByLane(S.groups).map(g=>{
+    const p=perGroup[g];
+    return `<b>${esc(g.replace('Team ',''))}</b>: Acro with ${esc(p.acro.join(', ')||'—')}; ${p.figures.size} figure${p.figures.size===1?'':'s'} (${[...p.figures].map(esc).join(', ')||'none'})`;
+  }).join('<br>');
+}
+function pmCoverageWeekSummary(){
+  return PM_FIGURE_SESSIONS.map(({sid,label})=>`<div style="margin-bottom:8px"><b style="color:var(--purple-dark)">${label} PM</b><br>${pmCoverageSummary(sid)}</div>`).join('');
+}
+function pmFigureTotalsSummary(){
+  const totals={};
+  S.groups.forEach(g=>totals[g]=new Set());
+  PM_FIGURE_SESSIONS.forEach(({sid})=>{
+    const sess=S.sessions[sid];if(!sess)return;
+    sess.blocks.filter(b=>!b.land&&!b.warmup).forEach(b=>b.asg.forEach(a=>{
+      if(a.activity==='Figure'&&totals[a.group])totals[a.group].add(a.skills);
+    }));
+  });
+  return sortByLane(S.groups).map(g=>{
+    const need=figuresListFor(g).length;
+    const got=totals[g].size;
+    const ok=got>=need;
+    return `<b>${esc(g.replace('Team ',''))}</b>: ${got}/${need} figures covered${ok?' ✅':''}`;
+  }).join('<br>');
+}
+
+/* ================= FIGURES & SKILLS LIBRARY ================= */
+let libraryEdit=null, libraryDraft=null;
+const LIB_DAY_SHORT={'mon-swim-am':'Mon AM','tue-swim-am':'Tue AM','wed-swim-am':'Wed AM','thu-swim-am':'Thu AM'};
+function rFigureSkillLibrary(){
+  let h=`<div class="card"><h3>Figures &amp; Skills library</h3>
+    <div class="note">Every skill below shows the lesson-plan content already set for that coach/round, so you can see exactly which one you're looking at. Add an image or link and it'll show automatically wherever that figure/skill is scheduled all week, and survive "Regenerate Routine schedule"/"Regenerate rotation" (unlike text typed into an individual session block). The Description field is for extra notes — the lesson-plan bullets above it aren't editable here (edit them on the actual session block instead).</div>
+    <div style="font-weight:700;color:var(--purple-dark);font-size:.85rem;margin:10px 0 4px">Figures</div>`;
+  ALL_FIGURES.forEach(fig=>{ h+=rLibraryRow('figure',fig,fig); });
+  h+='<div style="font-weight:700;color:var(--purple-dark);font-size:.85rem;margin:14px 0 4px">Skills</div>';
+  SKILL_ROUNDS.forEach(sid=>{
+    ROUTINE_ASSIGN.forEach(ra=>{
+      const src=ROTATION_CONTENT[sid]&&ROTATION_CONTENT[sid].byCoach&&ROTATION_CONTENT[sid].byCoach[ra.coach];
+      if(!src)return;
+      h+=rLibraryRow('skill',skillKey(sid,ra.coach),`${esc(src.topic)} — ${LIB_DAY_SHORT[sid]||sid} · ${esc(ra.coach)}`);
+    });
+  });
+  h+='</div>';
+  return h;
+}
+// The lesson-plan content (topic + bullets) already baked into the curriculum for a given
+// round+coach — shown read-only in the library so Maisie can see exactly which skill instance
+// she's attaching a link to (the same topic name can recur with different content across
+// different coaches/rounds, e.g. "Airborne weight" — Bianca Mon AM vs "Airborne Weight" —
+// Daisy Tue AM are two entirely separate entries with different bullets).
+function skillCurriculumHtml(sid,coach){
+  const src=ROTATION_CONTENT[sid]&&ROTATION_CONTENT[sid].byCoach&&ROTATION_CONTENT[sid].byCoach[coach];
+  if(!src)return '';
+  return `<div class="nt" style="white-space:pre-wrap;margin-top:2px;font-size:.8rem">${esc(fmtStation(src))}</div>`;
+}
+function rLibraryRow(type,key,label){
+  const store=type==='figure'?S.figureMedia:S.skillMedia;
+  const media=store[key]||{description:'',images:[],links:[]};
+  const editing=libraryEdit&&libraryEdit.type===type&&libraryEdit.key===key;
+  const lessonHtml=type==='skill'?skillCurriculumHtml(...key.split('|')):'';
+  let h=`<div style="border-bottom:1px solid var(--silver-light);padding:8px 0">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+      <span style="font-size:.85rem">${label}</span>
+      ${isAdmin?`<button class="btn sec sm" style="flex-shrink:0" onclick="openLibraryEdit('${type}','${esc(key)}')">${editing?'Editing…':(media.description||(media.images&&media.images.length)||(media.links&&media.links.length)?'Edit':'+ Add')}</button>`:''}
+    </div>`;
+  if(lessonHtml)h+=lessonHtml;
+  if(editing){
+    h+=`<div class="editform">
+      <textarea id="lib_desc" rows="2" placeholder="Extra notes (optional)">${esc(libraryDraft.description)}</textarea>
+      ${mediaEditHtml(libraryDraft,'lib')}
+      <div class="row"><button class="btn sm" onclick="saveLibraryEdit()">Save</button><button class="btn sec sm" onclick="libraryEdit=null;libraryDraft=null;render()">Cancel</button></div>
+    </div>`;
+  }else{
+    if(media.description)h+=`<div style="font-size:.8rem;color:var(--muted);margin-top:2px">${esc(media.description)}</div>`;
+    h+=mediaDisplayHtml(media);
+  }
+  h+='</div>';
+  return h;
+}
+function openLibraryEdit(type,key){
+  const store=type==='figure'?S.figureMedia:S.skillMedia;
+  const cur=store[key]||{description:'',images:[],links:[]};
+  libraryDraft={description:cur.description||'',images:[...(cur.images||[])],links:[...(cur.links||[])]};
+  libraryEdit={type,key};
+  render();
+}
+function libSyncFields(){ if(libraryEdit&&document.getElementById('lib_desc'))libraryDraft.description=document.getElementById('lib_desc').value; }
+function libAddImage(inp){
+  const file=inp.files&&inp.files[0];if(!file)return;
+  libSyncFields();
+  readImageCompressed(file,data=>{ libraryDraft.images.push({id:uid(),data}); render(); });
+}
+function libRemoveImage(id){ libSyncFields(); libraryDraft.images=libraryDraft.images.filter(im=>im.id!==id); render(); }
+function libAddLink(){
+  const url=document.getElementById('lib_link_url').value.trim();if(!url)return;
+  const label=document.getElementById('lib_link_label').value.trim();
+  libSyncFields();
+  libraryDraft.links.push({id:uid(),url,label:label||url}); render();
+}
+function libRemoveLink(id){ libSyncFields(); libraryDraft.links=libraryDraft.links.filter(l=>l.id!==id); render(); }
+function libCommitPendingLink(){
+  // catches a URL that was typed into the link fields but never had "+ Link" clicked,
+  // so hitting Save still keeps it (matches how the description field already behaves)
+  const urlEl=document.getElementById('lib_link_url');
+  if(!urlEl)return;
+  const url=urlEl.value.trim();
+  if(!url)return;
+  const labelEl=document.getElementById('lib_link_label');
+  const label=labelEl?labelEl.value.trim():'';
+  libraryDraft.links.push({id:uid(),url,label:label||url});
+}
+function saveLibraryEdit(){
+  libSyncFields();
+  libCommitPendingLink();
+  const {type,key}=libraryEdit;
+  const store=type==='figure'?S.figureMedia:S.skillMedia;
+  const desc=libraryDraft.description.trim();
+  if(!desc&&!libraryDraft.images.length&&!libraryDraft.links.length)delete store[key];
+  else store[key]={description:desc,images:libraryDraft.images,links:libraryDraft.links};
+  libraryEdit=null;libraryDraft=null;
+  save();pushMeta();render();
+}
+
+/* ================= SETUP ================= */
+function rSetup(){
+  let h='<div class="topbar"><h2>Setup</h2></div>';
+  const shareNote=cloudOn
+    ?'✅ <b>Online sync is on.</b> Plans and feedback sync automatically to every coach\'s phone — no files needed. The buttons below are just for backups.'
+    :'Running in <b>local-only mode</b>. Head coach: build the plans, then <b>Export full setup</b> and send the file to every coach to import. Coaches: at end of camp tap <b>Export my feedback</b> and send the file to the head coach, who imports each one and prints the reports.';
+  h+=`<div class="card"><h3>Sharing & backups</h3>
+    <div class="note">${shareNote}</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn sec sm" onclick="exportData('full')">Export full setup</button>
+      <button class="btn sm" onclick="exportData('feedback')">Export my feedback</button>
+      <button class="btn sec sm" onclick="document.getElementById('impFile').click()">Import a file</button>
+      <input type="file" id="impFile" accept=".json,application/json" style="display:none" onchange="importFile(this)">
+    </div></div>`;
+  h+=`<div class="card"><h3>Coaches</h3>${S.coaches.map((c,i)=>`<div class="listrow"><span>${esc(c)}</span><button onclick="rmCoach(${i})">remove</button></div>`).join('')}
+    <div class="addrow"><input type="text" id="newCoach" placeholder="Coach name"><button class="btn sm" onclick="addCoach()">Add</button></div></div>`;
+  h+=`<div class="card"><h3>Athletes (${S.athletes.length})</h3>`;
+  S.groups.forEach(g=>{
+    h+=`<p style="font-weight:700;color:var(--purple-dark);font-size:.85rem;margin:8px 0 2px">${esc(g)}</p>`;
+    h+=S.athletes.map((a,i)=>a.g===g?`<div class="listrow"><span>${esc(a.n)}</span><button onclick="rmAth(${i})">remove</button></div>`:'').join('');
+  });
+  h+=`<div class="addrow"><input type="text" id="newAth" placeholder="Athlete name"><select id="newAthG">${S.groups.map(g=>`<option>${esc(g)}</option>`).join('')}</select><button class="btn sm" onclick="addAth()">Add</button></div></div>`;
+  h+=`<div class="card"><h3>Groups</h3>${S.groups.map((g,i)=>`<div class="listrow"><span>${esc(g)}</span><button onclick="rmGroup(${i})">remove</button></div>`).join('')}
+    <div class="addrow"><input type="text" id="newGroup" placeholder="Group name"><button class="btn sm" onclick="addGroup()">Add</button></div></div>`;
+  h+=rFigureSkillLibrary();
+  h+=`<div class="card"><h3>Swim warm-up rotation</h3>
+    <div class="note">Land warm-up (15 min, each coach's own plan) — Maisie sits this one out, so only ${esc(LAND_WARMUP_COACHES.join(', '))} run it. With ${S.groups.length} groups between 4 coaches, one coach always has 2 groups; which coach doubles up rotates session to session. Pool warm-up (30 min, one shared plan) still uses all 5 Routine coaches (${esc(ROUTINE_ASSIGN.map(ra=>ra.coach).join(', '))}), each leading each group exactly twice over the week — and groups always swim in the same lane regardless of who's leading: Lane 5 Amethyst, Lane 4 Violet, Lane 3 Lavender, Lane 2 Iris, Lane 1 Lilac. Lucy, Melissa and Rebekah aren't part of either rotation (they each run one dryland/dance/yoga session, no swimming).</div>
+    <div style="padding:8px 10px 2px">${warmupRotationSummary()}</div>
+    <button class="btn sm" onclick="regenerateRotation()">Regenerate rotation</button>
+    <p style="font-size:.75rem;color:var(--muted);margin-top:6px">Only do this if you've changed the coach or group list, or if this list still shows an old rotation from before a schedule update — it overwrites all existing warm-up coach/group assignments (land warm-up notes are kept where the same coach keeps the same group) and pushes it live to every coach's phone.</p></div>`;
+  h+=`<div class="card"><h3>20-skill curriculum: Mon–Thu rounds + Friday catch-up</h3>
+    <div class="note">Monday–Thursday AM each run a different round of 5 skills (one per Routine coach). Every group naturally meets all 4 of their non-Routine coaches each morning, so by Thursday every group has covered 16 of the 20 skills (all 4 topics from each of their 4 visiting coaches) with zero manual placement needed. The remaining 4 skills — their own Routine coach's 4 topics, across all 4 rounds — can never reach a group any other way, since that coach is always on Routine with them, never teaching them a Skill. Friday AM's 4 rotation blocks are reserved for exactly this, delivered by whichever coach is already rotating through that group that day:<br><br>
+    ${fridayAmHomeSkillCatchupSummary()}</div></div>`;
+  if(FRIDAY_AM_MAKEUP.uncovered.length){
+    h+=`<div class="card"><h3>Coverage gaps — own Routine coach's skills</h3>
+      <div class="note">${FRIDAY_AM_MAKEUP.uncovered.map(u=>`<b>${esc(u.group)}</b> still hasn't covered <b>${esc(u.coach)}'s${u.topic?' '+esc(u.topic):''}</b> skill. There's no free Friday AM slot to fit it into — worth placing this manually.`).join('<br><br>')}</div></div>`;
+  }
+  h+=`<div class="card"><h3>Afternoon figures &amp; Acro coverage</h3>
+    <div class="note">Every Mon–Thu afternoon, each coach's 4 non-Routine blocks split into 1 Acro slot (with a different, non-home group) and 3 Figure slots. Each cluster has exactly 12 figures across the week — 3 per afternoon — so it's an exact fit with nothing left over, and every group's Acro partner varies day to day:<br><br>
+    ${pmCoverageWeekSummary()}
+    <b>Whole-week totals:</b><br>${pmFigureTotalsSummary()}</div></div>`;
+  h+=`<div class="card"><h3>Routine block rotation</h3>
+    <div class="note">Fixed pairs for the 30-minute Routine block, Mon–Fri, every swim session except Friday afternoon: Maisie–Lavender, Bianca–Iris, Daisy–Violet, Gemma–Amethyst, Romane–Lilac. At most 2 coaches are ever on Routine at the same time, so the speaker never needs sharing more than two ways. The other 60 minutes of each session rotates every group through all 4 of the other coaches — one 15-min visit each, no repeats, every single session (not just spread across the day).</div>
+    <button class="btn sm" onclick="regenerateRoutine()">Regenerate Routine schedule</button>
+    <p style="font-size:.75rem;color:var(--muted);margin-top:6px">Overwrites coach/group assignments in all 15-min swim blocks (Mon–Fri, excluding Fri PM). Any skills/notes text already typed into those blocks will be cleared — add it back after regenerating. <b>Tap this after any schedule update</b> (like a change to Routine timing or figures) — loading a new version of the app on its own won't overwrite a schedule that's already saved on this device or in the cloud; this button is what pushes the change live to every coach's phone.</p></div>`;
+  h+=`<div class="card"><h3>Admin PIN</h3>
+    <div class="addrow"><input type="text" id="newPin" placeholder="New PIN" inputmode="numeric"><button class="btn sm" onclick="changePin()">Change PIN</button></div>
+    <p style="font-size:.75rem;color:var(--muted);margin-top:6px">The PIN unlocks the Setup tab and plan editing (🔒 button, top of screen). Current PIN: <b>${esc(S.pin||'2026')}</b></p></div>`;
+  h+=`<div class="card"><h3>Danger zone</h3><button class="btn danger sm" onclick="resetAll()">Reset everything to defaults</button><p style="font-size:.75rem;color:var(--muted);margin-top:6px">Deletes all plans and feedback${cloudOn?' — for every device (online sync!)':' on this device'}.</p></div>`;
+  return h;
+}
+function changePin(){const v=document.getElementById('newPin').value.trim();if(!v){alert('Type a new PIN first.');return;}S.pin=v;save();pushMeta();render();alert('PIN changed to '+v);}
+function addCoach(){const v=document.getElementById('newCoach').value.trim();if(v&&!S.coaches.includes(v)){S.coaches.push(v);save();pushMeta();render();}}
+function rmCoach(i){if(confirm('Remove '+S.coaches[i]+'?')){S.coaches.splice(i,1);save();pushMeta();render();}}
+function addAth(){const v=document.getElementById('newAth').value.trim();const g=document.getElementById('newAthG').value;if(v){S.athletes.push({n:v,g});save();pushMeta();render();}}
+function rmAth(i){if(confirm('Remove '+S.athletes[i].n+'?')){S.athletes.splice(i,1);save();pushMeta();render();}}
+function addGroup(){const v=document.getElementById('newGroup').value.trim();if(v&&!S.groups.includes(v)){S.groups.push(v);save();pushMeta();render();}}
+function rmGroup(i){if(confirm('Remove '+S.groups[i]+'? Athletes stay but keep the old group name.')){S.groups.splice(i,1);save();pushMeta();render();}}
+function regenerateRotation(){
+  if(!confirm('Regenerate the warm-up rotation for all 10 swim sessions? This overwrites current coach/group warm-up assignments.'))return;
+  // remember existing land-warmup notes by coach+group so they aren't lost if the pairing recurs
+  const oldNotes={};
+  SWIM_SESSION_ORDER.forEach(sid=>{
+    const sess=S.sessions[sid];if(!sess)return;
+    const land=sess.blocks.find(b=>b.land);
+    if(land)land.asg.forEach(a=>{if(a.skills)oldNotes[sid+'|'+a.coach+'|'+a.group]=a.skills;});
+  });
+  generateWarmupRotation(S.sessions,LAND_WARMUP_COACHES,ROUTINE_ASSIGN.map(ra=>ra.coach),S.groups);
+  SWIM_SESSION_ORDER.forEach(sid=>{
+    const sess=S.sessions[sid];if(!sess)return;
+    const land=sess.blocks.find(b=>b.land);
+    if(land)land.asg.forEach(a=>{const k=sid+'|'+a.coach+'|'+a.group;if(oldNotes[k])a.skills=oldNotes[k];});
+  });
+  save();
+  SWIM_SESSION_ORDER.forEach(sid=>pushSession(sid));
+  render();
+}
+function regenerateRoutine(){
+  if(!confirm('Regenerate the Routine rotation for all swim sessions (Mon–Fri, excluding Fri PM)? This overwrites the coach/group assignments in every 15-min block, clearing any skills/notes text already added.'))return;
+  generateRoutineSchedule(S.sessions);
+  applyBlockOverrides(S.sessions);
+  save();
+  ROUTINE_SESSIONS.forEach(({sid})=>pushSession(sid));
+  render();
+}
+function resetAll(){
+  if(!confirm(cloudOn?'This deletes ALL plans and feedback FOR EVERYONE (online sync is on). Sure?':'This deletes ALL plans and feedback on this device. Sure?'))return;
+  localStorage.removeItem(LS);S=seed();save();
+  if(cloudOn&&db){
+    pushMeta();
+    Object.keys(S.sessions).forEach(sid=>pushSession(sid));
+    db.collection('feedback').get().then(snap=>{const b=db.batch();snap.forEach(d=>b.delete(d.ref));b.commit();});
+  }
+  render();
+}
+
+/* ================= EXPORT / IMPORT ================= */
+function download(name,obj){
+  const blob=new Blob([JSON.stringify(obj)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);a.download=name;a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),5000);
+}
+function exportData(kind){
+  if(kind==='feedback'){
+    if(!S.feedback.length){alert('No feedback on this device yet.');return;}
+    download(`insynch-feedback-${(me||'coach').replace(/\s+/g,'')}.json`,{type:'insynch-feedback',coach:me,feedback:S.feedback});
+  }else{
+    download('insynch-camp-setup.json',{type:'insynch-full',data:{coaches:S.coaches,groups:S.groups,athletes:S.athletes,sessions:S.sessions,schedule:S.schedule,feedback:[]}});
+  }
+}
+function importFile(inp){
+  const file=inp.files&&inp.files[0];if(!file)return;
+  const rd=new FileReader();
+  rd.onload=e=>{
+    try{
+      const obj=JSON.parse(e.target.result);
+      if(obj.type==='insynch-feedback'){
+        const before=S.feedback.length;
+        const ids=new Set(S.feedback.map(f=>f.id));
+        obj.feedback.forEach(f=>{if(!ids.has(f.id)){S.feedback.push(f);pushFeedback(f);}});
+        save();render();
+        alert(`Imported ${S.feedback.length-before} feedback entries${obj.coach?' from '+obj.coach:''}. (${obj.feedback.length-(S.feedback.length-before)} were already here.)`);
+      }else if(obj.type==='insynch-full'){
+        if(!confirm('Replace the plans, coaches, groups and athletes on this device with the imported setup? (Your feedback is kept.)'))return;
+        S.coaches=obj.data.coaches;S.groups=obj.data.groups;S.athletes=obj.data.athletes;
+        S.sessions=obj.data.sessions;S.schedule=obj.data.schedule;
+        save();pushMeta();Object.keys(S.sessions).forEach(sid=>pushSession(sid));
+        render();alert('Setup imported ✔');
+      }else alert('Not a recognised In Synch file.');
+    }catch(err){alert('Could not read that file.');}
+    inp.value='';
+  };
+  rd.readAsText(file);
+}
+
+/* ================= CLOUD SYNC (Firebase) ================= */
+let db=null, cloudOn=false, cloudReady=false;
+function cloudRender(){ if(asgForm||view==='feedback')return; render(); }
+function pushSession(sid){
+  if(!cloudOn||!db)return;
+  db.collection('sessions').doc(sid).set({json:JSON.stringify(S.sessions[sid])}).catch(()=>{});
+}
+function pushMeta(){
+  if(!cloudOn||!db)return;
+  db.collection('meta').doc('setup').set({
+    coaches:S.coaches,groups:S.groups,
+    athletesJson:JSON.stringify(S.athletes),
+    scheduleJson:JSON.stringify(S.schedule),
+    figureMediaJson:JSON.stringify(S.figureMedia||{}),
+    skillMediaJson:JSON.stringify(S.skillMedia||{}),
+    pin:S.pin||'2026'
+  }).catch(()=>{});
+}
+function pushFeedback(f){
+  if(!cloudOn||!db)return;
+  db.collection('feedback').doc(f.id).set(f).catch(()=>{});
+}
+function removeFeedback(id){
+  if(!cloudOn||!db)return;
+  db.collection('feedback').doc(id).delete().catch(()=>{});
+}
+function initCloud(){
+  if(typeof firebase==='undefined'||!FIREBASE_CONFIG||!FIREBASE_CONFIG.apiKey)return;
+  try{
+    firebase.initializeApp(FIREBASE_CONFIG);
+    db=firebase.firestore();
+    cloudOn=true;
+    db.enablePersistence().catch(()=>{});
+    if(pendingScheduleRepush){
+      // This device just self-repaired an outdated swim schedule on load — push the fix to
+      // the cloud now, before the listeners below get a chance to pull the old copy back down.
+      SWIM_SESSION_ORDER.forEach(sid=>pushSession(sid));
+      pushMeta();
+      pendingScheduleRepush=false;
+    }
+    db.collection('meta').doc('setup').onSnapshot(d=>{
+      cloudReady=true;
+      if(d.exists){
+        const m=d.data();
+        S.coaches=m.coaches;S.groups=m.groups;
+        S.athletes=JSON.parse(m.athletesJson);S.schedule=JSON.parse(m.scheduleJson);
+        S.figureMedia=m.figureMediaJson?JSON.parse(m.figureMediaJson):(S.figureMedia||{});
+        S.skillMedia=m.skillMediaJson?JSON.parse(m.skillMediaJson):(S.skillMedia||{});
+        S.pin=m.pin;save();cloudRender();
+      }else{
+        pushMeta(); // first device online seeds the cloud
+      }
+    },()=>{});
+    db.collection('sessions').onSnapshot(snap=>{
+      cloudReady=true;
+      if(snap.empty){Object.keys(S.sessions).forEach(sid=>pushSession(sid));return;}
+      snap.docChanges().forEach(ch=>{
+        if(ch.type==='removed')delete S.sessions[ch.doc.id];
+        else S.sessions[ch.doc.id]=JSON.parse(ch.doc.data().json);
+      });
+      save();cloudRender();
+    },()=>{});
+    db.collection('feedback').onSnapshot(snap=>{
+      cloudReady=true;
+      const cloud=[];snap.forEach(d=>cloud.push(d.data()));
+      // keep any local entries written while offline that haven't reached the cloud yet
+      const ids=new Set(cloud.map(f=>f.id));
+      S.feedback.filter(f=>!ids.has(f.id)).forEach(f=>{cloud.push(f);pushFeedback(f);});
+      S.feedback=cloud;
+      save();cloudRender();
+    },()=>{});
+  }catch(e){cloudOn=false;}
+}
+
+/* ================= INIT ================= */
+load();
+initCloud();
+render();
+</script>
+</body>
+</html>
